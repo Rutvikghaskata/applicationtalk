@@ -12,4 +12,9 @@ export const styles = StyleSheet.create({
     padding: 15,
     backgroundColor: Colors.white,
   },
+  imageBg:{ 
+    width: '100%',
+    height: responsiveHeight(40),
+    marginTop:40,
+  }
 });
