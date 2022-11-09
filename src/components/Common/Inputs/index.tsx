@@ -15,7 +15,7 @@ const InputField: FunctionComponent<InputProps> = ({icon, ...props}) => {
   };
   const customOnBlur = () => {
     props?.onBlur;
-    setFocus(true);
+    setFocus(false);
   };
 
   return (
