@@ -31,19 +31,19 @@ const OnBoarding = () => {
           <Animatable.Text
             animation="fadeInDown"
             style={styles.title}
-            duration={1000}
+            duration={800}
             delay={1000}>
             Let’s find a Doctor
           </Animatable.Text>
           <Animatable.Text
             animation="fadeInDown"
             style={styles.description}
-            duration={1000}
-            delay={2000}>
+            duration={800}
+            delay={1800}>
             to start search nearby doctor
           </Animatable.Text>
         </View>
-        <Animatable.View animation="bounceIn" duration={2500} delay={3000}>
+        <Animatable.View animation="bounceIn" duration={2000} delay={2600}>
           <TouchableOpacity style={styles.nextBtn} activeOpacity={0.9} onPress={handleOnPress}>
             <AntDesign name="right" color="white" size={27}/>
           </TouchableOpacity>
