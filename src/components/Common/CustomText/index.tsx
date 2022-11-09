@@ -8,7 +8,7 @@ import {
 } from 'react-native-responsive-dimensions';
 import {Colors, Fonts} from '../../../Theme';
 
-const TextComponent: FunctionComponent<TextProps> = props => {
+const CustomText: FunctionComponent<TextProps> = props => {
   return <Text style={styles.text}>{props.children}</Text>;
 };
 
@@ -21,4 +21,4 @@ const styles = StyleSheet.create({
     letterSpacing: 0.5,
   },
 });
-export default TextComponent;
+export default CustomText;

@@ -1,8 +1,8 @@
 import React from 'react';
-import {SafeAreaView, View, Text} from 'react-native';
+import {SafeAreaView, View,} from 'react-native';
 import {styles} from '../styles';
 import Image from '../../../../assets/Images/personal-details.svg';
-import {BackIcon} from '../../../../components/Common';
+import {BackIcon,CustomText} from '../../../../components/Common';
 import {useAppNavigation} from '../../../../navigations/hook';
 
 const Signup = () => {
@@ -18,7 +18,7 @@ const Signup = () => {
         <Image height="100%" width="100%" />
       </View>
       <View style={styles.detailsContent}>
-        <Text style={styles.title}>Personal Details</Text>
+        <CustomText>Personal Details</CustomText>
       </View>
     </SafeAreaView>
   );

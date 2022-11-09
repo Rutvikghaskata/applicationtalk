@@ -1,6 +1,6 @@
 import React, {useState, FunctionComponent} from 'react';
 import {SafeAreaView, ScrollView, View} from 'react-native';
-import {Input, Text, Button} from '../../../components/Common';
+import {Input, CustomText, Button} from '../../../components/Common';
 import {styles} from './styles';
 import Image from '../../../assets/Images/sign-up.svg';
 
@@ -23,7 +23,7 @@ const Signup = () => {
           <Image height="100%" width="100%" />
         </View>
         <View style={styles.signUpContent}>
-          <Text>Sign up</Text>
+          <CustomText>Sign up</CustomText>
           <View style={styles.formContainer}>
             <Input
               placeholder="Email Address / Phone Number"

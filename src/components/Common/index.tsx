@@ -1,8 +1,8 @@
 import Container from './container';
 import BackIcon from './BackIcon';
-import Text from './Text';
+import CustomText from './CustomText';
 import Input from './Inputs';
 import Button from './Button';
 
 
-export {Container, BackIcon, Text, Input, Button};
+export {Container, BackIcon, CustomText, Input, Button};
