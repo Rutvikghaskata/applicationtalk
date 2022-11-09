@@ -1,5 +1,5 @@
 import React from 'react';
-import {OnBoarding,Signup,PersonalDetails} from '../../screens';
+import {OnBoarding, Signup, PersonalDetails} from '../../screens';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {Storage} from '../../config/lib';
@@ -9,14 +9,19 @@ const AuthStack = () => {
   const [isAppFirstLaunched, setIsAppFirstLaunched] = React.useState(true);
   const [isGetItem, setIsGetItem] = React.useState(false);
   React.useEffect(() => {
-    const appData = Storage.getItem('isAppFirstLaunched');
-    if (appData === null) {
-      setIsAppFirstLaunched(true);
-      setIsGetItem(true);
-      Storage.setItem('isAppFirstLaunched', 'false');
-    } else {
-      setIsAppFirstLaunched(false);
-      setIsGetItem(true);
+    try {
+      Storage.getItem('isAppFirstLaunched').then(data => {
+        if (data !== null) {
+          setIsAppFirstLaunched(false);
+          setIsGetItem(true);
+        } else {
+          setIsAppFirstLaunched(true);
+          setIsGetItem(true);
+          Storage.setItem('isAppFirstLaunched', 'false');
+        }
+      });
+    } catch (error) {
+      console.log(error);
     }
   }, []);
 

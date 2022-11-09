@@ -1,4 +1,11 @@
 import Container from './container';
+import BackIcon from './BackIcon';
+import Text from './Text';
+import Input from './Inputs';
+
 export {
-    Container
+    Container,
+    BackIcon,
+    Text,
+    Input
 }

@@ -5,7 +5,7 @@ import {SplashScreen} from './screens';
 
 const Main = () => {
   const [splash, setSplash] = useState(true);
-  const [isLoggedIn, setIsLoggedIn] = useState(null);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isGetToken, setIsGetToken] = useState(false);
   useEffect(() => {
     try {
