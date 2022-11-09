@@ -2,7 +2,8 @@ import {View, TextInput} from 'react-native';
 import React, {useState, FunctionComponent} from 'react';
 import {InputProps} from './types';
 import {Colors} from '../../../Theme';
-import Icons from '../../../assets/Icons/user.svg';
+import Email from '../../../assets/Icons/@.svg';
+import Lock from '../../../assets/Icons/lock.svg';
 import {styles} from './styles';
 
 const InputField: FunctionComponent<InputProps> = ({icon, ...props}) => {
@@ -20,7 +21,11 @@ const InputField: FunctionComponent<InputProps> = ({icon, ...props}) => {
   return (
     <View style={styles.InputWrapper}>
       <View style={styles.LeftIcon}>
-        <Icons height='100%'/>
+        {icon === 'email' ? (
+          <Email height="100%" />
+        ) : icon === 'lock' ? (
+          <Lock height="100%" />
+        ) : null}
       </View>
       <TextInput
         {...props}

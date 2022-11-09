@@ -29,4 +29,11 @@ export const styles = StyleSheet.create({
   detailsContent: {
     marginTop: 10,
   },
+  formContainer:{
+    marginTop: responsiveHeight(4.7),
+  },
+  password:{
+    //marginTop: 20,
+    marginTop: responsiveHeight(2.5),
+  }
 });

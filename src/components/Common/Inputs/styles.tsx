@@ -13,7 +13,7 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
   },
   LeftIcon: {
-    height: responsiveHeight(2.7),
+    height: responsiveHeight(3),
   },
   Input: {
     width: '100%',
