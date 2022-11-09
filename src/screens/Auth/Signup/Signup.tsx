@@ -2,9 +2,10 @@ import React, {useState} from 'react';
 import {
   SafeAreaView,
   ScrollView,
-  TouchableOpacity,
+  StatusBar,
   View,
   Text,
+  KeyboardAvoidingView
 } from 'react-native';
 import {
   Input,
@@ -38,34 +39,37 @@ const Signup = () => {
     <SafeAreaView style={styles.container}>
       <ScrollView>
         <View style={[styles.imageBg, {marginTop: 40}]}>
-          <Image height="100%" width="100%" />
+          <Image height="100%" width="100%"/>
         </View>
         <View style={styles.signUpContent}>
           <CustomText>Sign up</CustomText>
           <View style={styles.formContainer}>
             <Input
-              placeholder="Email Address / Phone Number"
-              icon="email"
               value={email}
+              placeholder="Email Address / Phone Number"
+              icon={"email"}
+              
+              type={"email"}
               onChangeText={text => setEmail(text)}
             />
             <View style={styles.password}>
               <Input
+                value={password}
                 placeholder="Password"
                 icon="lock"
-                value={password}
+                type={"password"}
                 onChangeText={text => setPassword(text)}
               />
             </View>
           </View>
           <View style={styles.terms}>
-            <Text style={styles.termsTitle}>
+            <Text style={styles.textRegular}>
               By signing up, you're agree to our
             </Text>
             <PressableText style={styles.linkTitle}>
               Terms & Conditions
             </PressableText>
-            <Text style={styles.termsTitle}> and</Text>
+            <Text style={styles.textRegular}>and</Text>
             <PressableText style={styles.linkTitle}>
               Privacy Policy
             </PressableText>
@@ -74,7 +78,7 @@ const Signup = () => {
             <Button label="Continue" onPress={onHandleContinue} />
           </View>
           <View style={styles.loginInfo}>
-            <Text style={styles.termsTitle}>Joined us before?</Text>
+            <Text style={styles.textRegular}>Joined us before?</Text>
             <PressableText style={styles.linkTitle}>Login</PressableText>
           </View>
         </View>

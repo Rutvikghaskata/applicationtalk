@@ -8,11 +8,11 @@ import {
 export const styles = StyleSheet.create({
     buttonWrapper:{
         width:'100%',
-        height:responsiveHeight(7.5),
-        borderRadius:responsiveHeight(2.5),
+        height:responsiveHeight(7),
+        borderRadius:responsiveHeight(2.3),
         backgroundColor:Colors.sky,
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
     },
     label:{
       color:Colors.white,

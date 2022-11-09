@@ -9,12 +9,12 @@ import {Colors, Fonts} from '../../../Theme';
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingHorizontal: responsiveWidth(4.5),
+    paddingHorizontal: responsiveWidth(5),
     backgroundColor: Colors.white,
   },
   imageBg: {
     width: '100%',
-    height: responsiveHeight(38),
+    height: responsiveHeight(35),
     marginTop: 10,
   },
   signUpContent: {},
@@ -34,23 +34,37 @@ export const styles = StyleSheet.create({
     flexWrap: 'wrap',
     marginTop: responsiveHeight(3.5),
   },
-  termsTitle: {
+  textRegular: {
+    fontSize: responsiveFontSize(1.8),
     fontFamily: Fonts.Regular,
     color: Colors.grey[600],
-    lineHeight:responsiveHeight(3)
+    lineHeight: responsiveHeight(3),
   },
-  linkTitle:{
+  linkTitle: {
+    fontSize: responsiveFontSize(1.8),
     fontFamily: Fonts.Regular,
     color: Colors.sky,
-    lineHeight:responsiveHeight(3),
-    marginLeft:2
+    lineHeight: responsiveHeight(3),
+    marginLeft: 2,
   },
-  btn:{
+  btn: {
     marginTop: responsiveHeight(3.5),
   },
-  loginInfo:{
-    marginTop: responsiveHeight(3.5),
+  loginInfo: {
+    marginTop: responsiveHeight(4.5),
     flexDirection: 'row',
     alignSelf: 'center',
-  }
+  },
+  MultiInputContainer: {
+    width: '100%',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  nameInput: {width: '50%', overflow: 'hidden'},
+  inputContainer: {
+    marginTop: responsiveHeight(2.5),
+  },
+  nextBtn: {
+    marginTop: responsiveHeight(4),
+  },
 });

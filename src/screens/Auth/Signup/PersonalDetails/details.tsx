@@ -1,25 +1,88 @@
-import React from 'react';
-import {SafeAreaView, View,} from 'react-native';
+import React, {useState} from 'react';
+import {SafeAreaView, View, ScrollView} from 'react-native';
 import {styles} from '../styles';
 import Image from '../../../../assets/Images/personal-details.svg';
-import {BackIcon,CustomText} from '../../../../components/Common';
+import {
+  BackIcon,
+  CustomText,
+  Input,
+  Button,
+} from '../../../../components/Common';
 import {useAppNavigation} from '../../../../navigations/hook';
 
 const Signup = () => {
   const navigation = useAppNavigation();
-
+  const [firstName, setFirstname] = useState<string>();
+  const [lastName, setLastname] = useState<string>();
+  const [gender, setGender] = useState<string>();
+  const [dob, setDob] = useState<string>();
+  const [address, setAddress] = useState<string>();
   const onHandleBack = () => {
     navigation.navigate('signup');
   };
   return (
     <SafeAreaView style={styles.container}>
-      <BackIcon onPress={onHandleBack} style={styles.backButton} />
-      <View style={styles.imageBg}>
-        <Image height="100%" width="100%" />
-      </View>
-      <View style={styles.detailsContent}>
-        <CustomText>Personal Details</CustomText>
-      </View>
+      <ScrollView>
+        <BackIcon onPress={onHandleBack} style={styles.backButton} />
+        <View style={styles.imageBg}>
+          <Image height="100%" width="100%" />
+        </View>
+        <View style={styles.detailsContent}>
+          <CustomText>Personal Details</CustomText>
+        </View>
+        <View style={styles.formContainer}>
+          <View style={styles.MultiInputContainer}>
+            <View style={styles.nameInput}>
+              <Input
+                value={firstName}
+                placeholder="First Name"
+                icon={'user'}
+                type={'text'}
+                onChangeText={text => setFirstname(text)}
+              />
+            </View>
+            <View style={styles.nameInput}>
+              <Input
+                value={lastName}
+                placeholder="Last Name"
+                icon={'none'}
+                type={'text'}
+                onChangeText={text => setLastname(text)}
+              />
+            </View>
+          </View>
+          <View style={styles.inputContainer}>
+            <Input
+              value={gender}
+              placeholder="Gender"
+              icon={'gender'}
+              type={'text'}
+              onChangeText={text => setGender(text)}
+            />
+          </View>
+          <View style={styles.inputContainer}>
+            <Input
+              value={dob}
+              placeholder="Date of Birth"
+              icon={'gender'}
+              type={'text'}
+              onChangeText={text => setGender(text)}
+            />
+          </View>
+          <View style={styles.inputContainer}>
+            <Input
+              value={address}
+              placeholder="Address"
+              icon={'home'}
+              type={'text'}
+              onChangeText={text => setGender(text)}
+            />
+          </View>
+          <View style={styles.nextBtn}>
+            <Button label="Next" onPress={onHandleBack} />
+          </View>
+        </View>
+      </ScrollView>
     </SafeAreaView>
   );
 };

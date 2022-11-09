@@ -13,15 +13,15 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
   },
   LeftIcon: {
-    height: responsiveHeight(3),
+    marginTop:3,
+    height: responsiveHeight(2.8),
   },
   Input: {
     width: '100%',
     borderBottomWidth: 1,
     marginLeft: 10,
+    paddingLeft:0,
     fontFamily: Fonts.Regular,
-    color: Colors.grey[500],
-    // fontSize: 16,
-    fontSize: responsiveFontSize(1.9),
+    fontSize: responsiveFontSize(2),
   },
 });
