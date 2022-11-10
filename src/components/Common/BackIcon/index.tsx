@@ -2,10 +2,14 @@ import { TouchableOpacity, StyleSheet } from 'react-native'
 import React,{FunctionComponent} from 'react'
 import Image from '../../../assets/Icons/back.svg';
 import {BackIconProps} from './type'
-
-const BackIcon:FunctionComponent<BackIconProps> = ({onPress,...props}) => {
+import {useAppNavigation} from '../../../navigations/hook';
+const BackIcon:FunctionComponent<BackIconProps> = ({...props}) => {
+  const navigation = useAppNavigation();
+  const onHandleBack = () => {
+  navigation.goBack();
+};
   return (
-    <TouchableOpacity style={[styles.backButton,props.style]} onPress={onPress}>
+    <TouchableOpacity style={[styles.backButton,props.style]} onPress={onHandleBack}>
       <Image height="100%"/>
     </TouchableOpacity>
   )

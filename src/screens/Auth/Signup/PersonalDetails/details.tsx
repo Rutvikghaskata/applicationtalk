@@ -17,13 +17,13 @@ const PersonalDetails = () => {
   const [gender, setGender] = useState<string>();
   const [dob, setDob] = useState<string>();
   const [address, setAddress] = useState<string>();
-  const onHandleBack = () => {
-    navigation.navigate('signup');
+  const onHandleNavigate = (name: string) => {
+    navigation.navigate(name);
   };
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>
-        <BackIcon onPress={onHandleBack} style={styles.backButton} />
+        <BackIcon style={styles.backButton} />
         <View style={styles.imageBg}>
           <Image height="100%" width="100%" />
         </View>
@@ -79,7 +79,7 @@ const PersonalDetails = () => {
             />
           </View>
           <View style={styles.nextBtn}>
-            <Button label="Next" onPress={()=> navigation.navigate('signin')} />
+            <Button label="Next" onPress={() => onHandleNavigate('signin')} />
           </View>
         </View>
       </ScrollView>

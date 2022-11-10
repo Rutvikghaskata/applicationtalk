@@ -7,5 +7,7 @@ import Otp from './Auth/Otp';
 import MedicalInfo from './Medical-Information/Medical-info'
 import LifeStyleInfo from './Medical-Information/Lifestyle-info'
 import Symptoms from './Medical-Information/Symptoms';
+import Forget from './Auth/ForgetPassword';
+import Reset from './Auth/ResetPassword';
+export {Login, Signup, OnBoarding, SplashScreen,PersonalDetails,Otp,Forget,Reset,MedicalInfo,LifeStyleInfo,Symptoms};
 
-export {Login, Signup, OnBoarding, SplashScreen,PersonalDetails,Otp,MedicalInfo,LifeStyleInfo,Symptoms};

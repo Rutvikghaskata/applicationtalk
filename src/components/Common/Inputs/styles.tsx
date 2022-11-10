@@ -13,15 +13,19 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
   },
   LeftIcon: {
-    marginTop:3,
+    marginTop: 3,
     height: responsiveHeight(2.8),
   },
   Input: {
     width: '100%',
     borderBottomWidth: 1,
     marginLeft: 10,
-    paddingLeft:0,
+    paddingLeft: 0,
     fontFamily: Fonts.Regular,
     fontSize: responsiveFontSize(2),
+  },
+  eyeIcon: {
+    position: 'absolute',
+    right: 10,
   },
 });

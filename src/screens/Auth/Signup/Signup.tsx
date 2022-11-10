@@ -17,16 +17,8 @@ import {styles} from './styles';
 import Image from '../../../assets/Images/sign-up.svg';
 import {useAppNavigation} from '../../../navigations/hook';
 
-// interface Props {
-//   email:string,
-//   password: string,
-// }
 
 const Signup = () => {
-  // const [state, setState] = useState<{email: string; password: string}>({
-  //   email: '',
-  //   password: '',
-  // });
   const navigation = useAppNavigation();
 
   const onHandleNavigate = (name: string) => {
@@ -37,7 +29,7 @@ const Signup = () => {
   const [password, setPassword] = useState<string>();
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView>
+      <ScrollView showsVerticalScrollIndicator={false}>
         <View style={[styles.imageBg, {marginTop: 40}]}>
           <Image height="100%" width="100%" />
         </View>
