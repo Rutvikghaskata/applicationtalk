@@ -1,5 +1,5 @@
 import React from 'react';
-import {OnBoarding, Signup, PersonalDetails} from '../../screens';
+import {OnBoarding, Signup,Otp, Login,PersonalDetails} from '../../screens';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {Storage} from '../../config/lib';
@@ -34,6 +34,9 @@ const AuthStack = () => {
           )}
           <Stack.Screen name="signup" component={Signup} />
           <Stack.Screen name="personalDetails" component={PersonalDetails} />
+          <Stack.Screen name="signin" component={Login} />
+          <Stack.Screen name="otp" component={Otp} />
+          
         </Stack.Navigator>
       </NavigationContainer>
     )
