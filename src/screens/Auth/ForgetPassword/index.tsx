@@ -2,16 +2,13 @@ import React, {useState} from 'react';
 import {
   SafeAreaView,
   ScrollView,
-  StatusBar,
   View,
   Text,
-  KeyboardAvoidingView,
 } from 'react-native';
 import {
   Input,
   CustomText,
   Button,
-  PressableText,
   BackIcon,
 } from '../../../components/Common';
 import {styles} from './styles';
@@ -21,22 +18,22 @@ import {useAppNavigation} from '../../../navigations/hook';
 const Forget = () => {
   const navigation = useAppNavigation();
 
+  const [email, setEmail] = useState<string>();
+
   const onHandleNavigate = (name: string) => {
     navigation.navigate(name);
   };
-
-  const [email, setEmail] = useState<string>();
-  const [password, setPassword] = useState<string>();
+  
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView showsVerticalScrollIndicator={false}>
-        <BackIcon style={styles.backButton} />
+        <BackIcon style={styles.backButton} onPress={()=>{}}/>
         <View style={[styles.imageBg]}>
           <Image height="100%" width="100%" />
         </View>
         <View style={styles.ForgetContent}>
-          <CustomText>Forgot</CustomText>
-          <CustomText>Password?</CustomText>
+          <CustomText type="extra-bold">Forgot</CustomText>
+          <CustomText type="extra-bold">Password?</CustomText>
           <View style={styles.terms}>
             <Text style={styles.textRegular}>
               Don't worry! It happens. Please enter the address associated with

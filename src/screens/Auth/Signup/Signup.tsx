@@ -34,7 +34,7 @@ const Signup = () => {
           <Image height="100%" width="100%" />
         </View>
         <View style={styles.signUpContent}>
-          <CustomText>Sign up</CustomText>
+          <CustomText type="extra-bold">Sign up</CustomText>
           <View style={styles.formContainer}>
             <Input
               value={email}

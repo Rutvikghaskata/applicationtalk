@@ -22,12 +22,12 @@ const Otp = () => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>
-        <BackIcon style={styles.backButton} />
+        <BackIcon style={styles.backButton} onPress={()=>{}}/>
         <View style={styles.imageBg}>
           <Image height="100%" width="100%" />
         </View>
         <View style={styles.OtpContent}>
-          <CustomText>Enter OTP</CustomText>
+          <CustomText type="extra-bold">Enter OTP</CustomText>
           <View style={styles.terms}>
             <Text style={styles.textRegular}>
               An 4 digit code has been sent to
