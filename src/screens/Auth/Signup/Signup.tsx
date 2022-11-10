@@ -37,7 +37,7 @@ const Signup = () => {
   const [password, setPassword] = useState<string>();
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView>
+      <ScrollView showsVerticalScrollIndicator={false}>
         <View style={[styles.imageBg, {marginTop: 40}]}>
           <Image height="100%" width="100%" />
         </View>

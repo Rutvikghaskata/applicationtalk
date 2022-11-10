@@ -17,13 +17,11 @@ const Signup = () => {
   const [gender, setGender] = useState<string>();
   const [dob, setDob] = useState<string>();
   const [address, setAddress] = useState<string>();
-  const onHandleBack = () => {
-    navigation.navigate('signup');
-  };
+
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>
-        <BackIcon onPress={onHandleBack} style={styles.backButton} />
+        <BackIcon style={styles.backButton} />
         <View style={styles.imageBg}>
           <Image height="100%" width="100%" />
         </View>

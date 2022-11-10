@@ -1,4 +1,4 @@
-import {View, TextInput} from 'react-native';
+import {View, TextInput, Pressable} from 'react-native';
 import React, {useState, FunctionComponent} from 'react';
 import {InputProps} from './types';
 import {Colors} from '../../../Theme';
@@ -9,10 +9,12 @@ import FocusLock from '../../../assets/Icons/lock-sky.svg';
 import User from '../../../assets/Icons/user.svg';
 import Gender from '../../../assets/Icons/gender.svg';
 import Home from '../../../assets/Icons/home.svg';
+import Icon from 'react-native-vector-icons/Ionicons';
 import {styles} from './styles';
 
 const InputField: FunctionComponent<InputProps> = ({icon, type, ...props}) => {
   const [focus, setFocus] = useState(false);
+  const [show, setShow] = useState(false);
 
   const customOnFocus = () => {
     props?.onFocus;
@@ -21,6 +23,9 @@ const InputField: FunctionComponent<InputProps> = ({icon, type, ...props}) => {
   const customOnBlur = () => {
     props?.onBlur;
     setFocus(false);
+  };
+  const handelPassword = () => {
+    setShow(!show);
   };
 
   return (
@@ -40,9 +45,9 @@ const InputField: FunctionComponent<InputProps> = ({icon, type, ...props}) => {
           )
         ) : icon === 'user' ? (
           <User height="100%" />
-        ): icon === 'gender' ? (
+        ) : icon === 'gender' ? (
           <Gender height="100%" />
-        ): icon === 'home' ? (
+        ) : icon === 'home' ? (
           <Home height="100%" />
         ) : null}
       </View>
@@ -59,8 +64,26 @@ const InputField: FunctionComponent<InputProps> = ({icon, type, ...props}) => {
         ]}
         onFocus={customOnFocus}
         onBlur={customOnBlur}
-        secureTextEntry={type === 'password' ? true : false}
+        secureTextEntry={type === 'password' ? show ? true : false : undefined}
       />
+      {type === 'password' &&
+        (show ? (
+          <Pressable onPress={handelPassword} style={[styles.eyeIcon]}>
+            <Icon
+              name="eye-off-outline"
+              size={22}
+              color={focus ? Colors.sky : Colors.grey[500]}
+            />
+          </Pressable>
+        ) : (
+          <Pressable onPress={handelPassword} style={[styles.eyeIcon]}>
+            <Icon
+              name="eye-outline"
+              size={22}
+              color={focus ? Colors.sky : Colors.grey[500]}
+            />
+          </Pressable>
+        ))}
     </View>
   );
 };
