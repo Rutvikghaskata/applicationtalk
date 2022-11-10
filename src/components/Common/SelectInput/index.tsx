@@ -21,7 +21,7 @@ import Occupation from '../../../assets/Icons/occupation.svg';
 import Entypo from 'react-native-vector-icons/Entypo';
 import {styles} from './styles';
 
-const InputField: FunctionComponent<InputProps> = ({icon, type, ...props}) => {
+const InputField: FunctionComponent<InputProps> = ({icon, ...props}) => {
   const [focus, setFocus] = useState(false);
   const [value, setValue] = useState('');
   const [visible, setVisible] = useState(false);
@@ -133,14 +133,14 @@ const InputField: FunctionComponent<InputProps> = ({icon, type, ...props}) => {
         </View>
         <TouchableOpacity
           activeOpacity={1}
-          onPress={() => setVisible(!visible)}
+          onPress={() => setFocus(!focus)}
           style={[
             styles.valueField,
             {
-              borderColor: visible ? Colors.sky : Colors.grey[200],
+              borderColor: focus ? Colors.sky : Colors.grey[200],
             },
           ]}>
-          <Text>{value ? value : props.placeholder}</Text>
+          <Text style={styles.value}>{value ? value : props.placeholder}</Text>
         </TouchableOpacity>
         <Entypo
           name="chevron-down"
@@ -152,7 +152,7 @@ const InputField: FunctionComponent<InputProps> = ({icon, type, ...props}) => {
           color={focus ? Colors.sky : Colors.grey[500]}
         />
       </View>
-      {visible && (
+      {focus && (
         <View style={styles.selectContainer}>
           <ScrollView>
             {options.map((option, index) => {
@@ -163,8 +163,7 @@ const InputField: FunctionComponent<InputProps> = ({icon, type, ...props}) => {
                   activeOpacity={0.7}
                   onPress={() => {
                     setValue(option.label);
-                    setTimeout(() => {}, 500);
-                    setVisible(false);
+                    setFocus(false)
                   }}>
                   <Text
                     style={[

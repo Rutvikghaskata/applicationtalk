@@ -8,17 +8,32 @@ import {
 } from 'react-native-responsive-dimensions';
 import {Colors, Fonts} from '../../../Theme';
 
-const CustomText: FunctionComponent<TextProps> = props => {
-  return <Text style={styles.text}>{props.children}</Text>;
+const CustomText: FunctionComponent<TextProps> = ({type, ...props}) => {
+  return (
+    <Text
+      style={[
+        type === 'medium' ? styles.mediumText : styles.BigText,
+        styles.text,props.style
+      ]}>
+      {props.children}
+    </Text>
+  );
 };
 
 const styles = StyleSheet.create({
   text: {
-    fontSize: responsiveFontSize(4.2),
     fontFamily: Fonts.Bold,
     color: Colors.primaryBlue[400],
-    lineHeight: responsiveHeight(5.5),
+
     letterSpacing: 0.5,
+  },
+  mediumText: {
+    fontSize: responsiveFontSize(2.8),
+    lineHeight: responsiveHeight(5.5),
+  },
+  BigText: {
+    fontSize: responsiveFontSize(4.2),
+    lineHeight: responsiveHeight(5.5),
   },
 });
 export default CustomText;

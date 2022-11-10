@@ -15,9 +15,10 @@ export const styles = StyleSheet.create({
     width: '100%',
     borderBottomWidth: 1,
     marginLeft: 10,
-    paddingBottom:10,
+    paddingBottom:16,
   },
   LeftIcon: {
+    marginTop:2,
     height: responsiveHeight(2.8),
   },
   Input: {
@@ -34,18 +35,23 @@ export const styles = StyleSheet.create({
     top:0,
   },
   selectContainer:{
+    position: 'absolute',
+    top:35,
     width: '100%',
     height: 200,
     backgroundColor: Colors.white,
     marginTop: 10,
     borderRadius: 5,
     elevation: 10,
-    // borderWidth: 1,
-    // borderColor: Colors.sky,
-    overflow: 'hidden'
+    overflow: 'hidden',
+    zIndex:1000,
   },
   selectOptions:{
    justifyContent: 'center',
+  },
+  value:{
+    fontFamily: Fonts.Regular,
+    color: Colors.grey[500],
   },
   label:{
     fontFamily: Fonts.Regular,
