@@ -41,9 +41,6 @@ const Otp = () => {
             autoFocusOnLoad
             codeInputFieldStyle={styles.underlineStyleBase}
             codeInputHighlightStyle={styles.underlineStyleHighLighted}
-            // onCodeFilled={code => {
-            //   setOtp(code);
-            // }}
             onCodeFilled={code => {
               console.log(`Code is ${code}, you are good to go!`);
             }}

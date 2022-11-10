@@ -44,16 +44,15 @@ const AuthStack = () => {
           {isAppFirstLaunched && (
             <Stack.Screen name="OnBoarding" component={OnBoarding} />
           )}
-          <Stack.Screen name="medicalInfo" component={MedicalInfo} />
-          {/* <Stack.Screen name="signup" component={Signup} />
+          <Stack.Screen name="signup" component={Signup} />
           <Stack.Screen name="personalDetails" component={PersonalDetails} />
-          <Stack.Screen name="signin" component={Login} />
+          <Stack.Screen name="signIn" component={Login} />
           <Stack.Screen name="otp" component={Otp} />
-          <Stack.Screen name="symptoms" component={Symptoms} />
-          <Stack.Screen name="medicalInfo" component={MedicalInfo} />
-          <Stack.Screen name="lifeStyleInfo" component={LifeStyleInfo} />
           <Stack.Screen name="reset" component={Reset} />
-          <Stack.Screen name="forget" component={Forget} /> */}
+          <Stack.Screen name="forget" component={Forget} />
+          <Stack.Screen name="lifeStyleInfo" component={LifeStyleInfo} />
+          <Stack.Screen name="medicalInfo" component={MedicalInfo} />
+          <Stack.Screen name="symptoms" component={Symptoms} />
         </Stack.Navigator>
       </NavigationContainer>
     )

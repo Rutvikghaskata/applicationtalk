@@ -79,7 +79,7 @@ const PersonalDetails = () => {
             />
           </View>
           <View style={styles.nextBtn}>
-            <Button label="Next" onPress={() => onHandleNavigate('signin')} />
+            <Button label="Next" onPress={() => onHandleNavigate('medicalInfo')} />
           </View>
         </View>
       </ScrollView>
