@@ -25,7 +25,7 @@ const Login = () => {
     <SafeAreaView style={styles.container}>
       <ScrollView>
         <BackIcon onPress={onHandleBack} style={styles.backButton} />
-        <View style={[styles.imageBg, {marginTop: 40}]}>
+        <View style={[styles.imageBg]}>
           <Image height="100%" width="100%" />
         </View>
         <View style={styles.logInContent}>

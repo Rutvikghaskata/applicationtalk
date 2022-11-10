@@ -10,7 +10,7 @@ import {
 } from '../../../../components/Common';
 import {useAppNavigation} from '../../../../navigations/hook';
 
-const Signup = () => {
+const PersonalDetails = () => {
   const navigation = useAppNavigation();
   const [firstName, setFirstname] = useState<string>();
   const [lastName, setLastname] = useState<string>();
@@ -64,9 +64,9 @@ const Signup = () => {
             <Input
               value={dob}
               placeholder="Date of Birth"
-              icon={'gender'}
+              icon={'calender'}
               type={'text'}
-              onChangeText={text => setGender(text)}
+              onChangeText={text => setDob(text)}
             />
           </View>
           <View style={styles.inputContainer}>
@@ -75,11 +75,11 @@ const Signup = () => {
               placeholder="Address"
               icon={'home'}
               type={'text'}
-              onChangeText={text => setGender(text)}
+              onChangeText={text => setAddress(text)}
             />
           </View>
           <View style={styles.nextBtn}>
-            <Button label="Next" onPress={onHandleBack} />
+            <Button label="Next" onPress={()=> navigation.navigate('signin')} />
           </View>
         </View>
       </ScrollView>
@@ -87,4 +87,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default PersonalDetails;

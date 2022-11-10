@@ -7,8 +7,13 @@ import FocusEmail from '../../../assets/Icons/@sky.svg';
 import Lock from '../../../assets/Icons/lock.svg';
 import FocusLock from '../../../assets/Icons/lock-sky.svg';
 import User from '../../../assets/Icons/user.svg';
+import FocusUser from '../../../assets/Icons/user-sky.svg';
 import Gender from '../../../assets/Icons/gender.svg';
+import FocusGender from '../../../assets/Icons/gender-sky.svg';
 import Home from '../../../assets/Icons/home.svg';
+import FocusHome from '../../../assets/Icons/home-sky.svg';
+import Calender from '../../../assets/Icons/calender.svg';
+import FocusCalender from '../../../assets/Icons/calender-sky.svg';
 import {styles} from './styles';
 
 const InputField: FunctionComponent<InputProps> = ({icon, type, ...props}) => {
@@ -39,11 +44,29 @@ const InputField: FunctionComponent<InputProps> = ({icon, type, ...props}) => {
             <Lock height="100%" />
           )
         ) : icon === 'user' ? (
-          <User height="100%" />
-        ): icon === 'gender' ? (
-          <Gender height="100%" />
-        ): icon === 'home' ? (
-          <Home height="100%" />
+          focus ? (
+            <FocusUser height="100%" />
+          ) : (
+            <User height="100%" />
+          )
+        ) : icon === 'gender' ? (
+          focus ? (
+            <FocusGender height="100%" />
+          ) : (
+            <Gender height="100%" />
+          )
+        ) : icon === 'home' ? (
+          focus ? (
+            <FocusHome height="100%" />
+          ) : (
+            <Home height="100%" />
+          )
+        ) : icon === 'calender' ? (
+          focus ? (
+            <FocusCalender height="100%" />
+          ) : (
+            <Calender height="100%" />
+          )
         ) : null}
       </View>
       <TextInput

@@ -1,6 +1,6 @@
 
 import {ReactNode} from 'react';
-import {TextInputProps,ImageProps} from 'react-native'
+import {TextInputProps} from 'react-native'
 
 interface ExtraInputProps {
         icon: ReactNode;
