@@ -1,5 +1,14 @@
 import React from 'react';
-import {OnBoarding, Signup,Otp, Login,PersonalDetails,Reset,Forget,Home} from '../../screens';
+import {
+  OnBoarding,
+  Signup,
+  Otp,
+  Login,
+  PersonalDetails,
+  Reset,
+  Forget,
+  Home,
+} from '../../screens';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {Storage} from '../../config/lib';
@@ -32,14 +41,13 @@ const AuthStack = () => {
           {isAppFirstLaunched && (
             <Stack.Screen name="OnBoarding" component={OnBoarding} />
           )}
-          {/* <Stack.Screen name="signup" component={Signup} />
+          <Stack.Screen name="signup" component={Signup} />
           <Stack.Screen name="personalDetails" component={PersonalDetails} />
-          <Stack.Screen name="signin" component={Login} /> */}
+          <Stack.Screen name="signin" component={Login} />
           <Stack.Screen name="otp" component={Otp} />
-         {/* <Stack.Screen name="reset" component={Reset} />
+          <Stack.Screen name="reset" component={Reset} />
           <Stack.Screen name="forget" component={Forget} />
-          <Stack.Screen name="home" component={Home} />  */}
-          
+          <Stack.Screen name="home" component={Home} />
         </Stack.Navigator>
       </NavigationContainer>
     )

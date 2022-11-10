@@ -17,16 +17,8 @@ import {styles} from './styles';
 import Image from '../../../assets/Images/sign-up.svg';
 import {useAppNavigation} from '../../../navigations/hook';
 
-// interface Props {
-//   email:string,
-//   password: string,
-// }
 
 const Signup = () => {
-  // const [state, setState] = useState<{email: string; password: string}>({
-  //   email: '',
-  //   password: '',
-  // });
   const navigation = useAppNavigation();
 
   const onHandleNavigate = (name: string) => {

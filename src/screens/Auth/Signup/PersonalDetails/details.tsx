@@ -17,7 +17,9 @@ const Signup = () => {
   const [gender, setGender] = useState<string>();
   const [dob, setDob] = useState<string>();
   const [address, setAddress] = useState<string>();
-
+  const onHandleNavigate = (name: string) => {
+    navigation.navigate(name);
+  };
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>
@@ -77,7 +79,7 @@ const Signup = () => {
             />
           </View>
           <View style={styles.nextBtn}>
-            <Button label="Next" onPress={onHandleBack} />
+            <Button label="Next" onPress={() => onHandleNavigate('signin')} />
           </View>
         </View>
       </ScrollView>
