@@ -11,6 +11,9 @@ import {useAppNavigation} from '../../../navigations/hook';
 
 const MedicalInfo = () => {
   const navigation = useAppNavigation();
+  const onHandleNavigate = (name: string) => {
+    navigation.navigate(name);
+  };
   return (
     <SafeAreaView style={styles.container}>
       <BackIcon
@@ -38,7 +41,10 @@ const MedicalInfo = () => {
           </View>
         </View>
         <View>
-          <Button label="Next" onPress={()=>{navigation.navigate('lifeStyleInfo')}}/>
+          <Button
+            label="Next"
+            onPress={() => onHandleNavigate('lifeStyleInfo')}
+          />
         </View>
       </View>
     </SafeAreaView>

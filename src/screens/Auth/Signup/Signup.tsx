@@ -74,7 +74,7 @@ const Signup = () => {
           <View style={styles.loginInfo}>
             <Text style={styles.textRegular}>Joined us before?</Text>
             <PressableText
-              onPress={() => onHandleNavigate('signin')}
+              onPress={() => onHandleNavigate('signIn')}
               style={styles.linkTitle}>
               Login
             </PressableText>
