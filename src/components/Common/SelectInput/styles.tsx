@@ -20,6 +20,9 @@ export const styles = StyleSheet.create({
   LeftIcon: {
     marginTop:2,
     height: responsiveHeight(2.8),
+    width: responsiveHeight(2.8),
+    alignItems: 'center',
+    justifyContent:'center'
   },
   Input: {
     width: '100%',

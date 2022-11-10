@@ -22,12 +22,12 @@ const Login = () => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView showsVerticalScrollIndicator={false}>
-        <BackIcon style={styles.backButton} />
+        <BackIcon style={styles.backButton} onPress={()=>{}}/>
         <View style={[styles.imageBg, {marginTop: 40}]}>
           <Image height="100%" width="100%" />
         </View>
         <View style={styles.logInContent}>
-          <CustomText>Login</CustomText>
+          <CustomText type="extra-bold">Login</CustomText>
           <View style={styles.formContainer}>
             <Input
               value={email}

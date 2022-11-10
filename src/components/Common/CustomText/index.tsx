@@ -12,7 +12,7 @@ const CustomText: FunctionComponent<TextProps> = ({type, ...props}) => {
   return (
     <Text
       style={[
-        type === 'medium' ? styles.mediumText : styles.BigText,
+        type === 'medium' ? styles.mediumText :type === 'extra-bold' ? styles.BigText : null,
         styles.text,props.style
       ]}>
       {props.children}

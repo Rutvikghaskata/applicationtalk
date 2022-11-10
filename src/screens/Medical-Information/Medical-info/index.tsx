@@ -34,7 +34,7 @@ const MedicalInfo = () => {
             <SelectInput placeholder="Injuries" icon="injury" />
           </View>
           <View style={styles.selectWrapper}>
-            <SelectInput placeholder="Surgeries" icon="surgery" />
+            <SelectInput placeholder="Surgeries" icon="alcohol" />
           </View>
         </View>
         <View>

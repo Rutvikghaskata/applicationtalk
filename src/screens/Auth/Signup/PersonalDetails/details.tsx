@@ -23,12 +23,12 @@ const PersonalDetails = () => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>
-        <BackIcon style={styles.backButton} />
+        <BackIcon style={styles.backButton} onPress={()=>{}}/>
         <View style={styles.imageBg}>
           <Image height="100%" width="100%" />
         </View>
         <View style={styles.detailsContent}>
-          <CustomText>Personal Details</CustomText>
+          <CustomText type="extra-bold">Personal Details</CustomText>
         </View>
         <View style={styles.formContainer}>
           <View style={styles.MultiInputContainer}>

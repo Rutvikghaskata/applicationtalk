@@ -11,7 +11,6 @@ import {
   Input,
   CustomText,
   Button,
-  PressableText,
   BackIcon,
 } from '../../../components/Common';
 import {styles} from './styles';
@@ -24,33 +23,33 @@ const Reset = () => {
   const onHandleNavigate = (name: string) => {
     navigation.navigate(name);
   };
-  const [email, setEmail] = useState<string>();
+  const [confirmPassword, setConfirmPassword] = useState<string>();
   const [password, setPassword] = useState<string>();
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView showsVerticalScrollIndicator={false}>
-        <BackIcon style={styles.backButton} />
+        <BackIcon style={styles.backButton} onPress={()=>{}}/>
         <View style={[styles.imageBg]}>
           <Image height="100%" width="100%" />
         </View>
         <View style={styles.ResetContent}>
-          <CustomText>Reset</CustomText>
-          <CustomText>Password</CustomText>
+          <CustomText type="extra-bold">Reset</CustomText>
+          <CustomText type="extra-bold">Password</CustomText>
           <View style={styles.password}>
             <Input
               value={password}
               placeholder="New Password"
               icon={'lock'}
               type={'password'}
-              onChangeText={text => setEmail(text)}
+              onChangeText={text => setPassword(text)}
             />
             <View style={styles.password}>
               <Input
-                value={password}
+                value={confirmPassword}
                 placeholder="Confirm New Password"
                 icon="lock"
                 type={'password'}
-                onChangeText={text => setPassword(text)}
+                onChangeText={text => setConfirmPassword(text)}
               />
             </View>
           </View>
