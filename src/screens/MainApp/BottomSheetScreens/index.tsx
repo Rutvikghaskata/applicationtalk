@@ -8,14 +8,10 @@ import {
   StatusBar,
 } from 'react-native';
 import {Colors} from '../../../Theme';
-import {responsiveWidth} from 'react-native-responsive-dimensions';
 import {
-  Home,
-  AppointmentScreen,
-  SearchMap,
-  PillScreen,
-  ProfileScreen,
-} from '../../../screens';
+  responsiveWidth,
+} from 'react-native-responsive-dimensions';
+import {Home,AppointmentScreen,SearchMap,PillScreen,ProfileScreen} from '../../../screens';
 import Header from '../../../components/header';
 import {
   HomeTab,
@@ -76,6 +72,7 @@ const Tabs = ({navigation}: {navigation: any}) => {
             ...styles.shadow,
             borderTopLeftRadius: 20,
             borderTopRightRadius: 20,
+            
           },
           title: '',
           headerShown: false,

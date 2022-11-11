@@ -11,7 +11,6 @@ import {
 import {BackIcon, CustomText, Button} from '../../../components/Common';
 import CheckBox from '@react-native-community/checkbox';
 import {useAppNavigation} from '../../../navigations/hook';
-import Entypo from 'react-native-vector-icons/Entypo';
 import Feather from 'react-native-vector-icons/Feather';
 const Symptoms = () => {
   const initialState = {

@@ -7,3 +7,5 @@ interface ExtraInputProps {
 }
 
 export type CardProps = TouchableOpacityProps &  ExtraInputProps
+
+export type AppointmentProps = TouchableOpacityProps 

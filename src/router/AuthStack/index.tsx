@@ -1,5 +1,4 @@
-import React from 'react';
-
+import React,{FunctionComponent} from 'react';
 import {
   OnBoarding,
   Signup,
@@ -17,7 +16,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import {Storage} from '../../config/lib';
 const Stack = createStackNavigator();
 
-const AuthStack = () => {
+const AuthStack: FunctionComponent = () => {
   const [isAppFirstLaunched, setIsAppFirstLaunched] = React.useState(true);
   const [isGetItem, setIsGetItem] = React.useState(false);
   React.useEffect(() => {

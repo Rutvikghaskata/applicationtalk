@@ -11,6 +11,7 @@ import FocusUser from '../../assets/Icons/user-sky.svg';
 import Gender from '../../assets/Icons/gender.svg';
 import FocusGender from '../../assets/Icons/gender-sky.svg';
 import Calender from '../../assets/Icons/calender.svg';
+import Calender2 from '../../assets/Icons/calender-2.svg'
 import FocusCalender from '../../assets/Icons/calender-sky.svg';
 import Menu from '../../assets/Icons/menu.svg';
 import Notification from '../../assets/Icons/notification.svg';
@@ -31,7 +32,11 @@ import FocusPill from '../../assets/Icons/pill-sky.svg';
 import Profile from '../../assets/Icons/profile.svg';
 import FocusProfile from '../../assets/Icons/profile-sky.svg';
 import MapSearch from '../../assets/Icons/map-search.svg';
-import ClinicCardBg from '../../assets/Images/clinic-card-background.svg'
+import ClinicCardBg from '../../assets/Images/clinic-card-background.svg';
+import ClinicVisitBg from '../../assets/Icons/clinic-visit.svg';
+import HomeVisitBg from '../../assets/Icons/home-visit.svg';
+import TempEmoji from '../../assets/Icons/temp-emoji.svg';
+import SnuffEmoji from '../../assets/Icons/snuff-emoji.svg';
 
 export {
   Home,
@@ -47,6 +52,7 @@ export {
   Gender,
   FocusGender,
   Calender,
+  Calender2,
   FocusCalender,
   Menu,
   Notification,
@@ -67,5 +73,9 @@ export {
   Profile,
   FocusProfile,
   MapSearch,
-  ClinicCardBg
+  ClinicCardBg,
+  ClinicVisitBg,
+  HomeVisitBg,
+  TempEmoji,
+  SnuffEmoji
 };
