@@ -7,6 +7,42 @@ import {MaleProfile} from '../../../../Theme/Images';
 import {SearchInput,SymptomsCard} from '../../../../components/Common';
 import Feather from 'react-native-vector-icons/Feather';
 import {SymptomsData} from '../../../../lib/utils/CommonUtils';
+import DoctorCard from '../../../../components/Common/DoctorCard';
+
+const Data = [
+  {
+    id: '1',
+    name: 'Dr. Chris Frazier',
+    specialization: 'Pediatrician',
+    isLike: 'false',
+    rating: 5.1,
+    gender: 'female',
+  },
+  {
+    id: '2',
+    name: 'Dr. Viola Dunn',
+    specialization: 'Pediatrician',
+    isLike: 'true',
+    rating: 3.6,
+    gender: 'male',
+  },
+  {
+    id: '3',
+    name: 'Dr. Chris Frazier',
+    specialization: 'Pediatrician',
+    isLike: 'false',
+    rating: 4.7,
+    gender: 'female',
+  },
+  {
+    id: '4',
+    name: 'Dr. Viola Dunn',
+    specialization: 'Pediatrician',
+    isLike: 'false',
+    rating: 3.5,
+    gender: 'male',
+  },
+];
 
 const Home: FunctionComponent = () => {
   const [search, setSearch] = useState<string>();
@@ -28,6 +64,7 @@ const Home: FunctionComponent = () => {
         </View>
         <Appointment />
         <Symptoms />
+        <Doctors />
       </ScrollView>
     </View>
   );
@@ -126,6 +163,21 @@ const Symptoms: FunctionComponent<AppointmentProps> = props => {
           )}
         />
       </View>
+    </View>
+  );
+};
+
+const Doctors = () => {
+  return (
+    <View style={styles.cards}>
+      <FlatList
+        data={Data}
+        numColumns={2}
+        keyExtractor={item => item.id}
+        renderItem={({item}) => (
+          <DoctorCard data={item}/>
+        )}
+      />
     </View>
   );
 };

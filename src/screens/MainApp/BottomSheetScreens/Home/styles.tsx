@@ -124,5 +124,11 @@ export const styles = StyleSheet.create({
   },
   symptoms: {
     marginTop: responsiveHeight(3.5),
-  } 
+  },
+  cards: {
+    width: responsiveWidth(100),
+    paddingHorizontal: responsiveWidth(3.5),
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
 });
