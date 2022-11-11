@@ -30,7 +30,7 @@ const Signup = () => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView showsVerticalScrollIndicator={false}>
-        <View style={[styles.imageBg, {marginTop: 40}]}>
+        <View style={[styles.imageBg, {marginTop: 50}]}>
           <Image height="100%" width="100%" />
         </View>
         <View style={styles.signUpContent}>

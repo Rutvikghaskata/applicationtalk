@@ -14,11 +14,11 @@ export const styles = StyleSheet.create({
   },
   imageBg: {
     width: '100%',
-    height: responsiveHeight(35),
+    height: responsiveHeight(33),
     marginTop: 10,
   },
   signUpContent: {},
-  backButton: {marginTop: 20, height: 18},
+  backButton: {marginTop: 30, height: 18},
   detailsContent: {
     marginTop: 10,
   },

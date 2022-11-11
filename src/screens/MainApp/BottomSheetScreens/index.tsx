@@ -1,45 +1,35 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import React from 'react';
-import {StyleSheet, View, Image, Text, TouchableOpacity} from 'react-native';
-import Logo from '../../../assets/Images/find-doctor.svg';
-
+import {
+  StyleSheet,
+  View,
+  Text,
+  TouchableOpacity,
+  StatusBar,
+} from 'react-native';
+import {Colors} from '../../../Theme';
+import {responsiveWidth} from 'react-native-responsive-dimensions';
+import {
+  Home,
+  AppointmentScreen,
+  SearchMap,
+  PillScreen,
+  ProfileScreen,
+} from '../../../screens';
+import Header from '../../../components/header';
+import {
+  HomeTab,
+  FocusHomeTab,
+  Appointment,
+  FocusAppointment,
+  Pill,
+  FocusPill,
+  Profile,
+  FocusProfile,
+  MapSearch,
+} from '../../../Theme/Icons';
 const Tab = createBottomTabNavigator();
 
-const Screen1 = () => {
-  return (
-    <View>
-      <Logo />
-    </View>
-  );
-};
-const Screen2 = () => {
-  return (
-    <View>
-      <Text>Screen1</Text>
-    </View>
-  );
-};
-const MiddleScreen = () => {
-  return (
-    <View>
-      <Text>Screen1</Text>
-    </View>
-  );
-};
-const Screen3 = () => {
-  return (
-    <View>
-      <Text>Screen1</Text>
-    </View>
-  );
-};
-const Screen4 = () => {
-  return (
-    <View>
-      <Text>Screen1</Text>
-    </View>
-  );
-};
 export type Props = {
   children: string;
   onPress: any;
@@ -65,124 +55,131 @@ const CustomTabBarButton: React.FC<Props> = ({children, onPress}) => (
     </View>
   </TouchableOpacity>
 );
-const Tabs = () => {
+
+const Tabs = ({navigation}: {navigation: any}) => {
   return (
-    <Tab.Navigator
-      tabBarOptions={{
-        showLabel: false,
-      }}
-      screenOptions={{
-        tabBarStyle: {
-          backgroundColor: '#ffffff',
-          height: 70,
-          ...styles.shadow,
-          borderTopLeftRadius: 20,
-          borderTopRightRadius: 20,
-        },
-        // title: '',
-        // headerLeft: props => (
-        //     <View style={{backgroundColor:'red',height:'100%',width:200}}>
-        //       <Text style={{color: 'red',}}></Text>  
-        //     </View>
-          
-        // ),
-         headerShown: false,
-      }}>
-      <Tab.Screen
-        name="Screen1"
-        component={Screen1}
-        options={{
-          tabBarIcon: ({focused}) => (
-            <View style={{alignItems: 'center', justifyContent: 'center'}}>
-              <Image
-                source={require('../../../assets/Images/home-icon.png')}
-                resizeMode="contain"
+    <>
+      <StatusBar
+        hidden
+        backgroundColor={Colors.primaryBlue[400]}
+        barStyle="light-content"
+      />
+      <Header navigation={navigation} />
+      <Tab.Navigator
+        tabBarOptions={{
+          showLabel: false,
+        }}
+        screenOptions={{
+          tabBarStyle: {
+            backgroundColor: '#ffffff',
+            height: 70,
+            ...styles.shadow,
+            borderTopLeftRadius: 20,
+            borderTopRightRadius: 20,
+          },
+          title: '',
+          headerShown: false,
+        }}>
+        <Tab.Screen
+          name="home"
+          component={Home}
+          options={{
+            tabBarIcon: ({focused}) => (
+              <View
                 style={{
-                  width: 25,
-                  height: 25,
-                  tintColor: focused ? '#0094DE' : '#9CB6C3',
-                }}
-              />
-            </View>
-          ),
-        }}
-      />
-      <Tab.Screen
-        name="Screen2"
-        component={Screen2}
-        options={{
-          tabBarIcon: ({focused}) => (
-            <View style={{alignItems: 'center', justifyContent: 'center'}}>
-              <Image
-                source={require('../../../assets/Images/home-icon.png')}
-                resizeMode="contain"
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  height: responsiveWidth(6),
+                  width: responsiveWidth(6),
+                }}>
+                {focused ? (
+                  <FocusHomeTab height="100%" />
+                ) : (
+                  <HomeTab height="100%" />
+                )}
+              </View>
+            ),
+          }}
+        />
+        <Tab.Screen
+          name="appointment"
+          component={AppointmentScreen}
+          options={{
+            tabBarIcon: ({focused}) => (
+              <View
                 style={{
-                  width: 25,
-                  height: 25,
-                  tintColor: focused ? '#0094DE' : '#9CB6C3',
-                }}
-              />
-            </View>
-          ),
-        }}
-      />
-      <Tab.Screen
-        name="MiddleScreen"
-        component={MiddleScreen}
-        options={{
-          tabBarIcon: ({focused}) => (
-            <Image
-              source={require('../../../assets/Images/home-icon.png')}
-              resizeMode="contain"
-              style={{
-                width: 30,
-                height: 30,
-                tintColor: '#ffff',
-              }}
-            />
-          ),
-          tabBarButton: props => <CustomTabBarButton {...props} />,
-        }}
-      />
-      <Tab.Screen
-        name="Screen3"
-        component={Screen3}
-        options={{
-          tabBarIcon: ({focused}) => (
-            <View style={{alignItems: 'center', justifyContent: 'center'}}>
-              <Image
-                source={require('../../../assets/Images/home-icon.png')}
-                resizeMode="contain"
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  height: responsiveWidth(6),
+                  width: responsiveWidth(6),
+                }}>
+                {focused ? (
+                  <FocusAppointment height="100%" />
+                ) : (
+                  <Appointment height="100%" />
+                )}
+              </View>
+            ),
+          }}
+        />
+        <Tab.Screen
+          name="searchMap"
+          component={SearchMap}
+          options={{
+            tabBarIcon: ({}) => (
+              <View
                 style={{
-                  width: 25,
-                  height: 25,
-                  tintColor: focused ? '#0094DE' : '#9CB6C3',
-                }}
-              />
-            </View>
-          ),
-        }}
-      />
-      <Tab.Screen
-        name="Screen4"
-        component={Screen4}
-        options={{
-          tabBarIcon: ({focused}) => (
-            <View style={{alignItems: 'center', justifyContent: 'center'}}>
-              <Image
-                source={require('../../../assets/Images/home-icon.png')}
-                resizeMode="contain"
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  height: responsiveWidth(6),
+                  width: responsiveWidth(6),
+                }}>
+                <MapSearch height="100%" />
+              </View>
+            ),
+            tabBarButton: props => <CustomTabBarButton {...props} />,
+          }}
+        />
+        <Tab.Screen
+          name="pill"
+          component={PillScreen}
+          options={{
+            tabBarIcon: ({focused}) => (
+              <View
                 style={{
-                  width: 25,
-                  height: 25,
-                  tintColor: focused ? '#0094DE' : '#9CB6C3',
-                }}
-              />
-            </View>
-          ),
-        }}
-      />
-    </Tab.Navigator>
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  height: responsiveWidth(6),
+                  width: responsiveWidth(6),
+                }}>
+                {focused ? <FocusPill height="100%" /> : <Pill height="100%" />}
+              </View>
+            ),
+          }}
+        />
+        <Tab.Screen
+          name="profile"
+          component={ProfileScreen}
+          options={{
+            tabBarIcon: ({focused}) => (
+              <View
+                style={{
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  height: responsiveWidth(6),
+                  width: responsiveWidth(6),
+                }}>
+                {focused ? (
+                  <FocusProfile height="100%" />
+                ) : (
+                  <Profile height="100%" />
+                )}
+              </View>
+            ),
+          }}
+        />
+      </Tab.Navigator>
+    </>
   );
 };
 

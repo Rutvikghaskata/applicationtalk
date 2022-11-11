@@ -21,12 +21,14 @@ const Main = () => {
     } catch (error) {
       console.log(error);
     }
-    setTimeout(() => {setSplash(false)},2000)
+    setTimeout(() => {
+      setSplash(false);
+    }, 2000);
   }, []);
   return splash ? (
     <SplashScreen />
   ) : (
-    isGetToken && (isLoggedIn ? <AppStack /> : <AuthStack />)
+    isGetToken && (isLoggedIn ? <AuthStack /> : <AppStack />)
   );
 };
 

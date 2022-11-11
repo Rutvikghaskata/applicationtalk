@@ -56,7 +56,7 @@ export const styles = StyleSheet.create({
     height: responsiveHeight(35),
     marginTop: 10,
   },
-  backButton: {marginTop: 20, height: 18},
+  backButton: {marginTop: 30, height: 18},
   borderStyleHighLighted: {},
 
   underlineStyleBase: {

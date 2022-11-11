@@ -11,9 +11,9 @@ export const styles = StyleSheet.create({
     paddingHorizontal: responsiveWidth(5),
     backgroundColor: Colors.white,
   },
-  backButton: {marginTop: 20, height: 18},
+  backButton: {marginTop: 30, height: 18},
   content: {
-    height: responsiveHeight(100) - 40,
+    height: responsiveHeight(100) - 50,
     justifyContent:'space-between',
     paddingHorizontal:responsiveWidth(1),
     paddingBottom:responsiveWidth(6)

@@ -4,7 +4,11 @@ import Main from './src/Main';
 const App = () => {
   return (
     <>
-      <StatusBar hidden/>
+      <StatusBar
+        translucent
+        backgroundColor={'transparent'}
+        barStyle="dark-content"
+      />
       <Main />
     </>
   );
