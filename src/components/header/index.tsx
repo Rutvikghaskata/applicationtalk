@@ -27,8 +27,7 @@ const Header = ({navigation}: {navigation: any}) => {
       </View>
       <TouchableOpacity
         style={styles.icon}
-        activeOpacity={0.9}
-        onPress={() => navigation.openDrawer()}>
+        activeOpacity={0.9}>
         <Notification height="100%" />
       </TouchableOpacity>
     </View>

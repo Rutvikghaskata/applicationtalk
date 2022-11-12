@@ -1,9 +1,9 @@
-import {View, Text, FlatList} from 'react-native';
+import {View, Text, TouchableOpacity} from 'react-native';
 import React from 'react';
 import {styles} from './styles';
 import Female from '../../../assets/Images/female.svg';
 import Star from '../../../assets/Icons/star.svg';
-import UnLike from '../../../assets/Icons/unlike.svg';
+import AntDesign from 'react-native-vector-icons/AntDesign';
 
 const DoctorCard = (props: {
   data: {
@@ -36,14 +36,19 @@ const DoctorCard = (props: {
       | undefined;
   };
 }) => {
+  const [like,setLike] = React.useState(false);
   return (
-    <View style={styles.carddoctor}>
+    <TouchableOpacity style={styles.carddoctor} activeOpacity={0.9}>
       <View style={[styles.photosContainer]}>
-        <View style={[styles.like]}>
+        <TouchableOpacity style={[styles.like]} onPress={()=>setLike(!like)} activeOpacity={0.8}>
           <View style={[styles.likeStlye]}>
-            <UnLike />
+            {like ? 
+            <AntDesign name={'heart'} color="white" size={20}/>
+            : 
+            <AntDesign name={'hearto'} color="white" size={20}/>
+            }
           </View>
-        </View>
+        </TouchableOpacity>
         <View style={styles.imageBg}>
           <Female />
         </View>
@@ -56,7 +61,7 @@ const DoctorCard = (props: {
           <Text style={[styles.starText]}>{props.data.rating}</Text>
         </View>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 

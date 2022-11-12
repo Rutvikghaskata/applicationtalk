@@ -13,11 +13,15 @@ export const styles = StyleSheet.create({
     width: responsiveWidth(100),
     flexDirection: 'row',
     padding: responsiveWidth(5),
+    paddingTop: responsiveWidth(6),
     justifyContent: 'space-between',
+    shadowColor: Colors.primaryBlue[400],
+    shadowOffset: {width: 2, height: 10},
+    elevation: 10,
   },
   menuIcon: {
-    width: responsiveWidth(5),
-    height: responsiveWidth(5),
+    width: responsiveWidth(5.5),
+    height: responsiveWidth(5.5),
   },
   icon: {
     width: responsiveWidth(6),

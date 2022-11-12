@@ -4,7 +4,7 @@ import {PressableProps} from './types';
 
 const PressableText: FunctionComponent<PressableProps> = props => {
   return (
-    <TouchableOpacity {...props} activeOpacity={0.9}>
+    <TouchableOpacity {...props} activeOpacity={0.8}>
       <Text style={props.style}>{props.children}</Text>
     </TouchableOpacity>
   );

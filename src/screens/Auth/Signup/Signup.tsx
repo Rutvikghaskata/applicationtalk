@@ -2,10 +2,8 @@ import React, {useState} from 'react';
 import {
   SafeAreaView,
   ScrollView,
-  StatusBar,
   View,
   Text,
-  KeyboardAvoidingView,
 } from 'react-native';
 import {
   Input,

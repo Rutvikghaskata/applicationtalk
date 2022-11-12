@@ -7,7 +7,7 @@ const Colors = {
     300: '#7d83ad',
     400: '#263077',
   },
-  white: '#F5F5F5',
+  white: '#ffffff',
   grey: {
     100: '#F0F2F2',
     200: '#E5E5E5',
@@ -34,7 +34,8 @@ const Colors = {
   card: {
     sky: '#71A5D7',
     green: '#71CCD4',
-    orange: '#F8B894',
+    pink: '#F8B894',
+    orange:'#FCAC57',
   },
   black: '#000000',
   tab: {

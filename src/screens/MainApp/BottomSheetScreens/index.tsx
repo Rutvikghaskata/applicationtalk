@@ -54,9 +54,9 @@ const CustomTabBarButton: React.FC<Props> = ({children, onPress}) => (
 
 const Tabs = ({navigation}: {navigation: any}) => {
   return (
-    <>
+    <View style={{flex:1,backgroundColor:'white'}}>
       <StatusBar
-        hidden
+        // hidden
         backgroundColor={Colors.primaryBlue[400]}
         barStyle="light-content"
       />
@@ -69,10 +69,8 @@ const Tabs = ({navigation}: {navigation: any}) => {
           tabBarStyle: {
             backgroundColor: '#ffffff',
             height: 70,
-            ...styles.shadow,
             borderTopLeftRadius: 20,
-            borderTopRightRadius: 20,
-            
+            borderTopRightRadius: 20,           
           },
           title: '',
           headerShown: false,
@@ -176,21 +174,8 @@ const Tabs = ({navigation}: {navigation: any}) => {
           }}
         />
       </Tab.Navigator>
-    </>
+    </View>
   );
 };
-
-const styles = StyleSheet.create({
-  shadow: {
-    shadowColor: '#7f5df0',
-    shadowOffset: {
-      width: 0,
-      height: 10,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.5,
-    elevation: 5,
-  },
-});
 
 export default Tabs;

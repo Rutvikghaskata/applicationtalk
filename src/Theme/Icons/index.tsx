@@ -37,6 +37,14 @@ import ClinicVisitBg from '../../assets/Icons/clinic-visit.svg';
 import HomeVisitBg from '../../assets/Icons/home-visit.svg';
 import TempEmoji from '../../assets/Icons/temp-emoji.svg';
 import SnuffEmoji from '../../assets/Icons/snuff-emoji.svg';
+import DrawerHome from '../../assets/Icons/Drawer/home.svg';
+import DrawerProfile from '../../assets/Icons/Drawer/profile.svg';
+import DrawerAppointment from '../../assets/Icons/Drawer/appointment.svg';
+import DrawerHealth from '../../assets/Icons/Drawer/health.svg';
+import DrawerPayment from '../../assets/Icons/Drawer/payment.svg';
+import DrawerReview from '../../assets/Icons/Drawer/star.svg';
+import DrawerSetting from '../../assets/Icons/Drawer/setting.svg';
+import DrawerRecord from '../../assets/Icons/Drawer/star.svg';
 
 export {
   Home,
@@ -79,3 +87,14 @@ export {
   TempEmoji,
   SnuffEmoji
 };
+
+export const DrawerIcon = {
+  Home:DrawerHome,
+  Profile:DrawerProfile,
+  Appointment:DrawerAppointment,
+  Health:DrawerHealth,
+  Payment:DrawerPayment,
+  Review:DrawerReview,
+  Setting:DrawerSetting,
+  Record:DrawerRecord,
+}

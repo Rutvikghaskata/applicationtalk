@@ -24,8 +24,12 @@ export const styles = StyleSheet.create({
     border: 1,
     marginRight: responsiveWidth(3),
     marginBottom: responsiveWidth(3),
-    marginTop: responsiveHeight(3),
     overflow: 'hidden',
+    shadowColor: Colors.grey[200],
+    shadowOffset: {width: -2, height: 4},
+    shadowOpacity: 0.2,
+    shadowRadius: 3,
+   elevation:5
   },
   like: {
     height: responsiveHeight(6),
@@ -57,7 +61,7 @@ export const styles = StyleSheet.create({
     width: 69,
     height: responsiveHeight(4.8),
     borderRadius: 60,
-    backgroundColor: '#FFF8EA',
+    backgroundColor: Colors.yellow.light,
   },
   starText: {
     color: Colors.grey[900],

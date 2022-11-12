@@ -4,45 +4,21 @@ import {styles} from './styles';
 import {CardProps, AppointmentProps} from './types';
 import {ClinicVisitBg, HomeVisitBg, Calender2} from '../../../../Theme/Icons';
 import {MaleProfile} from '../../../../Theme/Images';
-import {SearchInput,SymptomsCard} from '../../../../components/Common';
-import Feather from 'react-native-vector-icons/Feather';
-import {SymptomsData} from '../../../../lib/utils/CommonUtils';
-import DoctorCard from '../../../../components/Common/DoctorCard';
-
-const Data = [
-  {
-    id: '1',
-    name: 'Dr. Chris Frazier',
-    specialization: 'Pediatrician',
-    isLike: 'false',
-    rating: 5.1,
-    gender: 'female',
-  },
-  {
-    id: '2',
-    name: 'Dr. Viola Dunn',
-    specialization: 'Pediatrician',
-    isLike: 'true',
-    rating: 3.6,
-    gender: 'male',
-  },
-  {
-    id: '3',
-    name: 'Dr. Chris Frazier',
-    specialization: 'Pediatrician',
-    isLike: 'false',
-    rating: 4.7,
-    gender: 'female',
-  },
-  {
-    id: '4',
-    name: 'Dr. Viola Dunn',
-    specialization: 'Pediatrician',
-    isLike: 'false',
-    rating: 3.5,
-    gender: 'male',
-  },
-];
+import {
+  SearchInput,
+  SymptomsCard,
+  PressableText,
+  DoctorCard,
+  SpecialistCard,
+  HospitalCard,
+} from '../../../../components/Common';
+import {
+  SymptomsData,
+  DoctorsData,
+  SpecialistData,
+  HospitalsData,
+} from '../../../../lib/utils/CommonUtils';
+import LinearGradient from 'react-native-linear-gradient';
 
 const Home: FunctionComponent = () => {
   const [search, setSearch] = useState<string>();
@@ -65,6 +41,8 @@ const Home: FunctionComponent = () => {
         <Appointment />
         <Symptoms />
         <Doctors />
+        <Specialist />
+        <Hospitals />
       </ScrollView>
     </View>
   );
@@ -73,6 +51,7 @@ const Home: FunctionComponent = () => {
 const Card: FunctionComponent<CardProps> = ({type, ...props}) => {
   return (
     <TouchableOpacity
+      activeOpacity={1}
       style={[styles.card, type === 'clinic' ? styles.clinic : styles.home]}>
       <View style={styles.Icon}>
         {type === 'clinic' ? (
@@ -111,7 +90,7 @@ const Appointment: FunctionComponent<AppointmentProps> = props => {
           alignItems: 'center',
         }}>
         <Text style={styles.appTitle}>Appointment today</Text>
-        <Text style={styles.seeAll}>See all</Text>
+        <PressableText style={styles.seeAll}>See all</PressableText>
       </View>
       <View style={styles.appointmentCard}>
         <View style={styles.doctorInfo}>
@@ -142,24 +121,25 @@ const Appointment: FunctionComponent<AppointmentProps> = props => {
 
 const Symptoms: FunctionComponent<AppointmentProps> = props => {
   return (
-    <View style={styles.appointmentWrapper}>
-      <View
-        style={{
-          flexDirection: 'row',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-        }}>
+    <View style={styles.symptomsWrapper}>
+      <View style={styles.symptomshead}>
         <Text style={styles.appTitle}>What are your symptoms?</Text>
-        <Text style={styles.seeAll}>See all</Text>
+        <PressableText style={styles.seeAll}>See all</PressableText>
       </View>
       <View style={styles.symptoms}>
+        <LinearGradient
+          start={{x: 0, y: 0}}
+          end={{x: 1, y: 0}}
+          colors={['#ffffff', 'transparent']}
+          style={styles.linearBg}
+        />
         <FlatList
           data={SymptomsData}
           showsHorizontalScrollIndicator={false}
           horizontal
           keyExtractor={item => item.id}
-          renderItem={({item,index}) =>(
-            <SymptomsCard data={item} index={index}/>
+          renderItem={({item, index}) => (
+            <SymptomsCard data={item} index={index} />
           )}
         />
       </View>
@@ -169,15 +149,83 @@ const Symptoms: FunctionComponent<AppointmentProps> = props => {
 
 const Doctors = () => {
   return (
-    <View style={styles.cards}>
+    <View style={styles.doctors}>
+      <View style={styles.doctorhead}>
+        <Text style={styles.appTitle}>Popular doctors</Text>
+        <PressableText style={styles.seeAll}>See all</PressableText>
+      </View>
       <FlatList
-        data={Data}
+        data={DoctorsData}
         numColumns={2}
         keyExtractor={item => item.id}
-        renderItem={({item}) => (
-          <DoctorCard data={item}/>
-        )}
+        renderItem={({item}) => <DoctorCard data={item} />}
       />
+    </View>
+  );
+};
+
+const Specialist = () => {
+  return (
+    <View style={styles.specialist}>
+      <View style={styles.specialisthead}>
+        <Text style={styles.appTitle}>Specialists</Text>
+        <PressableText style={styles.seeAll}>See all</PressableText>
+      </View>
+      <View>
+        <LinearGradient
+          start={{x: 0, y: 0}}
+          end={{x: 1, y: 0}}
+          colors={['#ffffff', 'transparent']}
+          style={styles.linearBg1}
+        />
+        <FlatList
+          data={SpecialistData}
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          keyExtractor={item => item.id}
+          renderItem={({item, index}) => (
+            <View
+              style={{
+                marginRight: index === HospitalsData.length - 1 ? 15 : 0,
+              }}>
+              <SpecialistCard data={item} />
+            </View>
+          )}
+        />
+      </View>
+    </View>
+  );
+};
+
+const Hospitals = () => {
+  return (
+    <View style={styles.hospitalWrapper}>
+      <View style={styles.hospitalhead}>
+        <Text style={styles.appTitle}>Nearby Hospital</Text>
+        <PressableText style={styles.seeAll}>See all</PressableText>
+      </View>
+      <View>
+        <LinearGradient
+          start={{x: 0, y: 0}}
+          end={{x: 1, y: 0}}
+          colors={['#ffffff', 'transparent']}
+          style={styles.linearBg1}
+        />
+        <FlatList
+          data={HospitalsData}
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          keyExtractor={item => item.id}
+          renderItem={({item, index}) => (
+            <View
+              style={{
+                marginRight: index === HospitalsData.length - 1 ? 15 : 0,
+              }}>
+              <HospitalCard data={item} />
+            </View>
+          )}
+        />
+      </View>
     </View>
   );
 };

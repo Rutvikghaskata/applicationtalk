@@ -13,7 +13,7 @@ export const styles = StyleSheet.create({
     paddingHorizontal: responsiveWidth(4),
     paddingVertical: responsiveWidth(3),
     backgroundColor: Colors.primaryBlue[200],
-    marginRight: responsiveWidth(2.5),
+    marginLeft: responsiveWidth(2.5),
     borderRadius:5
   },
   emoji:{

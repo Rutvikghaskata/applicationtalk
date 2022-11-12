@@ -17,7 +17,7 @@ export const styles = StyleSheet.create({
     width: responsiveWidth(130),
     backgroundColor: Colors.primaryBlue[400],
     borderRadius: 300,
-    top: -responsiveHeight(47),
+    top: -responsiveHeight(49),
   },
   searchWrapper: {
     paddingHorizontal: responsiveWidth(3.5),
@@ -74,7 +74,7 @@ export const styles = StyleSheet.create({
     marginTop: responsiveHeight(5),
   },
   appTitle: {
-    fontSize: responsiveFontSize(2.8),
+    fontSize: responsiveFontSize(2.5),
     fontFamily: Fonts.Medium,
     color: Colors.grey[900],
   },
@@ -88,6 +88,15 @@ export const styles = StyleSheet.create({
     marginTop: responsiveHeight(3),
     backgroundColor: Colors.primaryBlue[400],
     borderRadius: responsiveWidth(2),
+  },
+  symptomsWrapper: {
+    marginTop: responsiveHeight(5),
+  },
+  symptomshead: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingHorizontal: responsiveWidth(3.5),
   },
   doctorInfo: {
     flexDirection: 'row',
@@ -106,7 +115,7 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     flexDirection: 'row',
     paddingHorizontal: responsiveWidth(4.5),
-    height: responsiveHeight(7.5),
+    height: responsiveHeight(7),
     backgroundColor: Colors.primaryBlue[300],
     borderRadius: responsiveWidth(2),
   },
@@ -125,10 +134,52 @@ export const styles = StyleSheet.create({
   symptoms: {
     marginTop: responsiveHeight(3.5),
   },
-  cards: {
+  doctors: {
     width: responsiveWidth(100),
+    marginTop: responsiveHeight(6),
     paddingHorizontal: responsiveWidth(3.5),
+  },
+  doctorhead:{
     flexDirection: 'row',
     justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom:responsiveHeight(4),
+  },
+  linearBg: {
+    position: 'absolute',
+    top: -5,
+    height: 55,
+    width: responsiveWidth(7),
+    zIndex: 10,
+  },
+  specialist:{
+    width: responsiveWidth(100),
+    marginTop: responsiveHeight(5),
+  },
+  specialisthead:{
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom:responsiveHeight(4),
+    paddingHorizontal: responsiveWidth(3.5),
+  },
+  linearBg1: {
+    position: 'absolute',
+    top: -5,
+    height: responsiveWidth(40),
+    width: responsiveWidth(5),
+    zIndex: 10,
+  },
+  hospitalWrapper:{
+    width: responsiveWidth(100),
+    marginTop: responsiveHeight(6),
+    marginBottom:100
+  },
+  hospitalhead:{
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom:responsiveHeight(4),
+    paddingHorizontal: responsiveWidth(3.5),
   },
 });

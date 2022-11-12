@@ -1,16 +1,16 @@
-import {View, Image, StyleSheet, Dimensions} from 'react-native';
+import {SafeAreaView, Image, StyleSheet, Dimensions} from 'react-native';
 import React from 'react';
 const Width = Dimensions.get('window').width;
 const Height = Dimensions.get('window').height;
 
 const SplashScreen = () => {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <Image
         source={require('../../assets/Images/Splace-Screen.png')}
         style={styles.image}
       />
-    </View>
+    </SafeAreaView>
   );
 };
 
