@@ -200,7 +200,7 @@ export const screens = [
   {
     id: '9',
     name: 'Logout',
-    screen: null,
+    screen: 'findlocation',
     icon: DrawerIcon.Home,
   },
 ];

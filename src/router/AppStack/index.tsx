@@ -1,11 +1,9 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
-import {
-  createDrawerNavigator,
-} from '@react-navigation/drawer';
+import {createDrawerNavigator} from '@react-navigation/drawer';
 import {TabScreens} from '../../screens';
-import CustomDrawer from '../../components/CustomDrawer'
+import CustomDrawer from '../../components/CustomDrawer';
 
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
@@ -17,7 +15,7 @@ const AppStack = () => {
         initialRouteName="tab"
         screenOptions={{headerShown: false}}
         drawerContent={props => <CustomDrawer {...props} />}>
-        <Drawer.Screen name="tab" component={TabScreens} />
+        {/* <Drawer.Screen name="tab" component={TabScreens} /> */}
       </Drawer.Navigator>
       {/* <Stack.Navigator screenOptions={{headerShown: false}}>
         <Stack.Screen name="home" component={TabScreens} />
@@ -25,6 +23,5 @@ const AppStack = () => {
     </NavigationContainer>
   );
 };
-
 
 export default AppStack;

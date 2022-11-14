@@ -6,7 +6,9 @@ import {
   responsiveWidth,
   responsiveFontSize,
 } from 'react-native-responsive-dimensions';
+
 const isDrawerOpen = useDrawerStatus() === 'open';
+
 export const styles = StyleSheet.create({
   MainCustomDrawer: {
     height: 100,
@@ -32,10 +34,8 @@ export const styles = StyleSheet.create({
     fontFamily: Fonts.Medium,
     marginLeft: 10,
   },
-
   DrawerOpen: {
     position: 'absolute',
-    right: isDrawerOpen ? -23 : 0,
     height: 100,
   },
   DrawerClose: {
@@ -43,7 +43,6 @@ export const styles = StyleSheet.create({
     height: 100,
     justifyContent: 'center',
     zIndex: 1,
-    right: isDrawerOpen ? -14 : 0,
   },
   MainDrawer: {
     height: 60,

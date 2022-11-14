@@ -1,4 +1,4 @@
-import {View, ScrollView,TouchableOpacity, Text} from 'react-native';
+import {View, ScrollView, TouchableOpacity, Text} from 'react-native';
 import React, {useState, FunctionComponent} from 'react';
 import {styles} from './styles';
 import Appointment from './Appointments';
@@ -8,10 +8,7 @@ import Specialist from './Specialist';
 import Hospitals from './Hospitals';
 import Card from './Card';
 import {Handler} from '../../../../config/lib';
-import {
-  SearchInput,
-  PressableSearch,
-} from '../../../../components/Common';
+import {SearchInput, PressableSearch} from '../../../../components/Common';
 import Icon from 'react-native-vector-icons/Ionicons';
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 import {Colors} from '../../../../Theme';

@@ -7,13 +7,17 @@ import {
 
 export const styles = StyleSheet.create({
   card: {
+    justifyContent: 'space-between',
     height: responsiveWidth(42),
     width: responsiveWidth(45),
     borderRadius: responsiveWidth(5.5),
     paddingHorizontal: responsiveWidth(3.5),
     paddingVertical: responsiveWidth(4.5),
-    elevation: 1,
-    justifyContent: 'space-between',
+    shadowColor: Colors.grey[200],
+    shadowOffset: {width: -2, height: 4},
+    shadowOpacity: 0.2,
+    shadowRadius: 3,
+    elevation: 8,
   },
   clinic: {
     backgroundColor: Colors.sky,
