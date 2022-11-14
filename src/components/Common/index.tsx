@@ -10,6 +10,7 @@ import DoctorCard from './DoctorCard';
 import SymptomsCard from './SymptomsCard';
 import SpecialistCard from './SpecialistCard';
 import HospitalCard from './HospitalsCard';
+import PressableSearch from './PressableSearch';
 
 export {
   Container,
@@ -24,4 +25,5 @@ export {
   SymptomsCard,
   SpecialistCard,
   HospitalCard,
+  PressableSearch
 };

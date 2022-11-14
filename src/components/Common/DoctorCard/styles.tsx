@@ -7,7 +7,21 @@ import {
 } from 'react-native-responsive-dimensions';
 
 export const styles = StyleSheet.create({
-  likeStlye: {
+  card: {
+    backgroundColor: '#FFFFFF',
+    width: responsiveWidth(45),
+    borderRadius: 20,
+    border: 1,
+    marginRight: responsiveWidth(3),
+    marginVertical: responsiveWidth(1.5),
+    overflow: 'hidden',
+    shadowColor: Colors.grey[200],
+    shadowOffset: {width: -2, height: 4},
+    shadowOpacity: 0.2,
+    shadowRadius: 3,
+    elevation: 5,
+  },
+  likeStyle: {
     marginLeft: responsiveWidth(2.8),
     marginTop: responsiveHeight(0.5),
   },
@@ -16,21 +30,7 @@ export const styles = StyleSheet.create({
     height: responsiveHeight(10.5),
     width: responsiveHeight(10.5),
   },
-  carddoctor: {
-    backgroundColor: '#FFFFFF',
-    width: responsiveWidth(45),
-    height: 244,
-    borderRadius: 20,
-    border: 1,
-    marginRight: responsiveWidth(3),
-    marginBottom: responsiveWidth(3),
-    overflow: 'hidden',
-    shadowColor: Colors.grey[200],
-    shadowOffset: {width: -2, height: 4},
-    shadowOpacity: 0.2,
-    shadowRadius: 3,
-   elevation:5
-  },
+
   like: {
     height: responsiveHeight(6),
     width: responsiveWidth(12),
@@ -57,7 +57,7 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'row',
-    marginTop: responsiveHeight(1.5),
+    marginVertical: responsiveHeight(2),
     width: 69,
     height: responsiveHeight(4.8),
     borderRadius: 60,

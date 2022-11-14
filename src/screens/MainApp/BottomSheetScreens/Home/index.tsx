@@ -1,4 +1,11 @@
-import {View, Text, TouchableOpacity, ScrollView, FlatList} from 'react-native';
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  ScrollView,
+  FlatList,
+  Alert,
+} from 'react-native';
 import React, {useState, FunctionComponent} from 'react';
 import {styles} from './styles';
 import {CardProps, AppointmentProps} from './types';
@@ -11,6 +18,7 @@ import {
   DoctorCard,
   SpecialistCard,
   HospitalCard,
+  PressableSearch,
 } from '../../../../components/Common';
 import {
   SymptomsData,
@@ -19,26 +27,70 @@ import {
   HospitalsData,
 } from '../../../../lib/utils/CommonUtils';
 import LinearGradient from 'react-native-linear-gradient';
+import Icon from 'react-native-vector-icons/Ionicons';
+import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
+import {Colors} from '../../../../Theme';
+import {Handler} from '../../../../config/lib';
 
 const Home: FunctionComponent = () => {
   const [search, setSearch] = useState<string>();
+  const [showFilter, setShowFilter] = useState<boolean>(false);
+
+  Handler.addEventListener('hardwareBackPress', () => {
+    if (showFilter) {
+      setShowFilter(false);
+      return true;
+    }
+    return false;
+  });
   return (
     <View style={styles.homeContainer}>
       <ScrollView showsVerticalScrollIndicator={false}>
-        <View style={styles.headerBackground} />
+        <View
+          style={[
+            showFilter ? styles.headerBackground : styles.roundBackground,
+          ]}
+        />
         <View style={styles.searchWrapper}>
-          <SearchInput
-            value={search}
-            placeholder="Search Doctor / Symptoms"
-            onChangeText={text => setSearch(text)}
-            style={{backgroundColor: 'white', borderWidth: 0}}
-          />
+          {showFilter ? (
+            <SearchInput
+              value={search}
+              placeholder="Search Doctor / Symptoms"
+              onChangeText={text => setSearch(text)}
+              style={{backgroundColor: 'white', borderWidth: 0}}
+              autoFocus={true}
+            />
+          ) : (
+            <PressableSearch
+              placeholder="Search Doctor / Symptoms"
+              onPress={() => setShowFilter(true)}
+            />
+          )}
         </View>
-        <View style={styles.cardWrapper}>
-          <Card type="clinic" />
-          <Card type="home" />
-        </View>
-        <Appointment />
+        {showFilter ? (
+          <View style={styles.filterWrapper}>
+            <TouchableOpacity style={styles.filter} activeOpacity={0.9}>
+              <Icon name="location-outline" size={23} color={Colors.white} />
+              <Text style={styles.filterTitle}>Location</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.filter} activeOpacity={0.9}>
+              <SimpleLineIcons name="calendar" size={20} color={Colors.white} />
+              <Text style={styles.filterTitle}>Date</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.filter} activeOpacity={0.9}>
+              <Icon name="md-filter" size={23} color={Colors.white} />
+              <Text style={styles.filterTitle}>Filters</Text>
+            </TouchableOpacity>
+          </View>
+        ) : (
+          <>
+            <View style={styles.cardWrapper}>
+              <Card type="clinic" />
+              <Card type="home" />
+            </View>
+            <Appointment />
+          </>
+        )}
         <Symptoms />
         <Doctors />
         <Specialist />
@@ -150,7 +202,7 @@ const Symptoms: FunctionComponent<AppointmentProps> = props => {
 const Doctors = () => {
   return (
     <View style={styles.doctors}>
-      <View style={styles.doctorhead}>
+      <View style={styles.doctorHead}>
         <Text style={styles.appTitle}>Popular doctors</Text>
         <PressableText style={styles.seeAll}>See all</PressableText>
       </View>
@@ -158,7 +210,11 @@ const Doctors = () => {
         data={DoctorsData}
         numColumns={2}
         keyExtractor={item => item.id}
-        renderItem={({item}) => <DoctorCard data={item} />}
+        renderItem={({item, index}) => (
+          <View style={index % 2 == 0 ? styles.even : styles.odd}>
+            <DoctorCard data={item} />
+          </View>
+        )}
       />
     </View>
   );
