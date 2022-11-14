@@ -45,6 +45,10 @@ import DrawerPayment from '../../assets/Icons/Drawer/payment.svg';
 import DrawerReview from '../../assets/Icons/Drawer/star.svg';
 import DrawerSetting from '../../assets/Icons/Drawer/setting.svg';
 import DrawerRecord from '../../assets/Icons/Drawer/star.svg';
+import Hospital from '../../assets/Icons/hospital.svg';
+import Doctor from '../../assets/Icons/doctor.svg'
+import Pin from '../../assets/Icons/Point.png';
+import Verified from '../../assets/Icons/verified.svg';
 
 export {
   Home,
@@ -85,7 +89,11 @@ export {
   ClinicVisitBg,
   HomeVisitBg,
   TempEmoji,
-  SnuffEmoji
+  SnuffEmoji,
+  Hospital,
+  Doctor,
+  Pin,
+  Verified
 };
 
 export const DrawerIcon = {

@@ -33,7 +33,7 @@ export type Props = {
 
 const CustomTabBarButton: React.FC<Props> = ({children, onPress}) => (
   <TouchableOpacity
-    activeOpacity={0.9}
+    activeOpacity={1}
     style={{
       top: -30,
       justifyContent: 'center',
