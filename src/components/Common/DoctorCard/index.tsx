@@ -36,29 +36,32 @@ const DoctorCard = (props: {
       | undefined;
   };
 }) => {
-  const [like,setLike] = React.useState(false);
+  const [like, setLike] = React.useState(false);
   return (
-    <TouchableOpacity style={styles.carddoctor} activeOpacity={0.9}>
-      <View style={[styles.photosContainer]}>
-        <TouchableOpacity style={[styles.like]} onPress={()=>setLike(!like)} activeOpacity={0.8}>
-          <View style={[styles.likeStlye]}>
-            {like ? 
-            <AntDesign name={'heart'} color="white" size={20}/>
-            : 
-            <AntDesign name={'hearto'} color="white" size={20}/>
-            }
+    <TouchableOpacity style={styles.card} activeOpacity={0.9}>
+      <View style={styles.photosContainer}>
+        <TouchableOpacity
+          style={styles.like}
+          onPress={() => setLike(!like)}
+          activeOpacity={0.8}>
+          <View style={styles.likeStyle}>
+            {like ? (
+              <AntDesign name={'heart'} color="white" size={20} />
+            ) : (
+              <AntDesign name={'hearto'} color="white" size={20} />
+            )}
           </View>
         </TouchableOpacity>
         <View style={styles.imageBg}>
           <Female />
         </View>
       </View>
-      <View style={[styles.DetalisContainer]}>
-        <Text style={[styles.DrText]}>{props.data.name}</Text>
-        <Text style={[styles.Drspecial]}>{props.data.specialization}</Text>
-        <View style={[styles.star]}>
+      <View style={styles.DetalisContainer}>
+        <Text style={styles.DrText}>{props.data.name}</Text>
+        <Text style={styles.Drspecial}>{props.data.specialization}</Text>
+        <View style={styles.star}>
           <Star />
-          <Text style={[styles.starText]}>{props.data.rating}</Text>
+          <Text style={styles.starText}>{props.data.rating}</Text>
         </View>
       </View>
     </TouchableOpacity>

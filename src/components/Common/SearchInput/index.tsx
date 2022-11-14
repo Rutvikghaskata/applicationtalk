@@ -14,7 +14,6 @@ const SearchInput: FunctionComponent<SearchInputProps> = props => {
         style={styles.textInputStyle}
         placeholderTextColor={Colors.grey[500]}
         underlineColorAndroid="transparent"
-        placeholder="Search Symptoms"
       />
     </View>
   );
