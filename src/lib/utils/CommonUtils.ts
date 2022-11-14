@@ -1,5 +1,6 @@
 import { Colors } from "../../Theme";
 import {Heart,Gastro,Neuro,Dentist,Eyes,Lungs} from '../../Theme/Images';
+import {DrawerIcon} from '../../Theme/Icons';
 export const SymptomsData = [
   {
     id: '1',
@@ -143,5 +144,63 @@ export const HospitalsData = [
   {
     id: '6',
     name: 'Kiran Hospital',
+  },
+];
+
+
+export const screens = [
+  {
+    id: '1',
+    name: 'Home',
+    screen: 'home',
+    icon: DrawerIcon.Home,
+  },
+  {
+    id: '2',
+    name: 'Your Profile',
+    screen: 'profile',
+    icon: DrawerIcon.Profile,
+  },
+  {
+    id: '3',
+    name: 'Book Appointment',
+    screen: 'appointment',
+    icon: DrawerIcon.Appointment,
+  },
+  {
+    id: '4',
+    name: 'Health Feed',
+    screen: 'home',
+    icon: DrawerIcon.Health,
+  },
+  {
+    id: '5',
+    name: 'My Payment',
+    screen: 'home',
+    icon: DrawerIcon.Payment,
+  },
+  {
+    id: '6',
+    name: 'Review',
+    screen: 'home',
+    icon: DrawerIcon.Review,
+  },
+  {
+    id: '7',
+    name: 'Settings',
+    screen: 'home',
+    icon: DrawerIcon.Setting,
+  },
+  {
+    id: '8',
+    name: 'Medical Records',
+    screen: 'home',
+    icon: DrawerIcon.Record,
+  },
+  {
+    id: '9',
+    name: 'Logout',
+    screen: null,
+    icon: DrawerIcon.Home,
   },
 ];
