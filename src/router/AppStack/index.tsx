@@ -3,10 +3,9 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import {TabScreens} from '../../screens';
-import CustomDrawer from '../../components/CustomDrawer';
-
+import CustomDrawer from '../../components/CustomDrawer'
+import FindLocation from '../../screens/MainApp/BottomSheetScreens/SearchMap/FindLocation';
 const Drawer = createDrawerNavigator();
-const Stack = createStackNavigator();
 
 const AppStack = () => {
   return (
@@ -15,11 +14,9 @@ const AppStack = () => {
         initialRouteName="tab"
         screenOptions={{headerShown: false}}
         drawerContent={props => <CustomDrawer {...props} />}>
-        {/* <Drawer.Screen name="tab" component={TabScreens} /> */}
+        <Drawer.Screen name="tab" component={TabScreens} />
+        <Drawer.Screen name="findDoctor" component={FindLocation} />
       </Drawer.Navigator>
-      {/* <Stack.Navigator screenOptions={{headerShown: false}}>
-        <Stack.Screen name="home" component={TabScreens} />
-      </Stack.Navigator> */}
     </NavigationContainer>
   );
 };
