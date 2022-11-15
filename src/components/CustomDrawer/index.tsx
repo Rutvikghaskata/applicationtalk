@@ -1,5 +1,6 @@
 import React from 'react';
 import {View, TouchableOpacity, Text, Image, FlatList} from 'react-native';
+import {useDrawerStatus} from '@react-navigation/drawer';
 import {MaleProfile} from '../../Theme/Images';
 import {screens} from '../../lib/utils/CommonUtils';
 import Entypo from 'react-native-vector-icons/Entypo';
@@ -11,6 +12,7 @@ const CustomDrawer = (props: {
     navigate: (arg0: string | null) => void;
   };
 }) => {
+  const isDrawerOpen = useDrawerStatus() === 'open';
   return (
     <View style={{flex: 1}}>
       <View style={styles.MainCustomDrawer}>
@@ -23,13 +25,13 @@ const CustomDrawer = (props: {
 
         <TouchableOpacity
           activeOpacity={1}
-          style={styles.DrawerOpen}
+          style={[styles.DrawerOpen, {right: isDrawerOpen ? -23 : 0}]}
           onPress={() => props.navigation.closeDrawer()}>
           <Image source={require('../../assets/Images/Right.png')} />
         </TouchableOpacity>
         <TouchableOpacity
           activeOpacity={1}
-          style={styles.DrawerClose}
+          style={[styles.DrawerClose, {right: isDrawerOpen ? -14 : 0}]}
           onPress={() => props.navigation.closeDrawer()}>
           <Entypo name="chevron-thin-left" size={22} color={'white'} />
         </TouchableOpacity>

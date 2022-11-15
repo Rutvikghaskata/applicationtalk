@@ -4,6 +4,7 @@ import {styles} from './styles';
 import Female from '../../../assets/Images/female.svg';
 import Star from '../../../assets/Icons/star.svg';
 import AntDesign from 'react-native-vector-icons/AntDesign';
+import {responsiveWidth} from 'react-native-responsive-dimensions';
 
 const DoctorCard = (props: {
   data: {
@@ -35,10 +36,16 @@ const DoctorCard = (props: {
       | null
       | undefined;
   };
+  index: number;
 }) => {
   const [like, setLike] = React.useState(false);
   return (
-    <TouchableOpacity style={styles.card} activeOpacity={0.9}>
+    <TouchableOpacity
+      style={[
+        styles.card,
+        props.index % 2 == 0 && {marginLeft: responsiveWidth(3.5)},
+      ]}
+      activeOpacity={0.9}>
       <View style={styles.photosContainer}>
         <TouchableOpacity
           style={styles.like}

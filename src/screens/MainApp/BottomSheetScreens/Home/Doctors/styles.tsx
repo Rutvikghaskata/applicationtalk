@@ -10,7 +10,6 @@ export const styles = StyleSheet.create({
   doctors: {
     width: responsiveWidth(100),
     marginTop: responsiveHeight(6),
-    paddingHorizontal: responsiveWidth(3.5),
   },
   doctorhead: {
     flexDirection: 'row',

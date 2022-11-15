@@ -4,18 +4,21 @@ import {styles} from './styles';
 import {PressableText, DoctorCard} from '../../../../../components/Common';
 import {DoctorsData} from '../../../../../lib/utils/CommonUtils';
 
- const Doctors = () => {
-  return <View style={styles.doctors}>
-     <View style={styles.doctorhead}>
-       <Text style={styles.appTitle}>Popular doctors</Text>
-       <PressableText style={styles.seeAll}>See all</PressableText>
-     </View>
-     <FlatList
-       data={DoctorsData}
-       numColumns={2}
-       keyExtractor={item => item.id}
-       renderItem={({ item }) => <DoctorCard data={item} />} />
-   </View>;
+const Doctors = () => {
+  return (
+    <View style={styles.doctors}>
+      <View style={styles.doctorhead}>
+        <Text style={styles.appTitle}>Popular doctors</Text>
+        <PressableText style={styles.seeAll}>See all</PressableText>
+      </View>
+      <FlatList
+        data={DoctorsData}
+        numColumns={2}
+        keyExtractor={item => item.id}
+        renderItem={({item,index}) => <DoctorCard data={item} index={index}/>}
+      />
+    </View>
+  );
 };
- 
+
 export default Doctors;

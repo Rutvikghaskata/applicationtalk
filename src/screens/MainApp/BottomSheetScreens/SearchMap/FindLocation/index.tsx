@@ -1,7 +1,7 @@
 import {SafeAreaView, View, TouchableOpacity} from 'react-native';
 import React from 'react';
 import {styles} from './styles';
-import Image from '../../../../../assets/Images/find-doctor.svg';
+import Image from '../../../../../assets/Images/find-location.svg';
 import Find from '../../../../../assets/Images/find-d.svg';
 import * as Animatable from 'react-native-animatable';
 import AntDesign from 'react-native-vector-icons/AntDesign';
@@ -44,7 +44,7 @@ const FindLocation = () => {
             hospital
           </Animatable.Text>
         </View>
-        <Animatable.View animation="fadeIn" duration={1000} delay={2600}>
+        <Animatable.View animation="bounceIn" duration={2000} delay={2600}>
           <TouchableOpacity
             style={styles.nextBtn}
             activeOpacity={0.9}

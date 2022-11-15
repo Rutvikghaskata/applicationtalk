@@ -12,7 +12,7 @@ export const styles = StyleSheet.create({
     width: responsiveWidth(45),
     borderRadius: 20,
     border: 1,
-    marginRight: responsiveWidth(3),
+    marginRight: responsiveWidth(3.5),
     marginVertical: responsiveWidth(1.5),
     overflow: 'hidden',
     shadowColor: Colors.grey[200],
