@@ -1,12 +1,8 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import React from 'react';
+import MyAppointment from '../../MyAppointment';
 
 const Appointment = () => {
-  return (
-    <View>
-      <Text>Appointment</Text>
-    </View>
-  )
-}
+  return <MyAppointment />;
+};
 
-export default Appointment
+export default Appointment;

@@ -19,7 +19,7 @@ export const styles = StyleSheet.create({
     shadowOffset: {width: -2, height: 4},
     shadowOpacity: 0.2,
     shadowRadius: 3,
-    elevation: 5,
+    elevation: 20,
   },
   likeStyle: {
     marginLeft: responsiveWidth(2.8),

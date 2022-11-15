@@ -49,7 +49,9 @@ import Hospital from '../../assets/Icons/hospital.svg';
 import Doctor from '../../assets/Icons/doctor.svg'
 import Pin from '../../assets/Icons/Point.png';
 import Verified from '../../assets/Icons/verified.svg';
-
+import Video from '../../assets/Icons/video.svg';
+import Audio from '../../assets/Icons/audio.svg';
+import Clinic from '../../assets/Icons/clinic.svg';
 export {
   Home,
   FocusHome,
@@ -93,7 +95,10 @@ export {
   Hospital,
   Doctor,
   Pin,
-  Verified
+  Verified,
+  Video,
+  Audio,
+  Clinic
 };
 
 export const DrawerIcon = {
