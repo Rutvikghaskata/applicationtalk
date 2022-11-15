@@ -2,10 +2,7 @@ import {View, Text, TouchableOpacity, ScrollView, FlatList} from 'react-native';
 import React, {useState, FunctionComponent} from 'react';
 import {styles} from './styles';
 import {CardProps} from '../types';
-import {
-  ClinicVisitBg,
-  HomeVisitBg,
-} from '../../../../../Theme/Icons';
+import {ClinicVisitBg, HomeVisitBg} from '../../../../../Theme/Icons';
 
 const Card: FunctionComponent<CardProps> = ({type, ...props}) => {
   return (

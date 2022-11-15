@@ -1,10 +1,10 @@
 import React from 'react';
 import {View, TouchableOpacity, Text, Image, FlatList} from 'react-native';
-import {useDrawerStatus} from '@react-navigation/drawer';
-import {MaleProfile} from '../../Theme/Images';
 import {screens} from '../../lib/utils/CommonUtils';
 import Entypo from 'react-native-vector-icons/Entypo';
 import {styles} from './styles';
+import {MaleProfile} from '../../Theme/Images';
+import {useDrawerStatus} from '@react-navigation/drawer';
 
 const CustomDrawer = (props: {
   navigation: {

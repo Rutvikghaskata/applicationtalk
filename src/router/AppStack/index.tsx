@@ -1,10 +1,8 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
-import {
-  createDrawerNavigator,
-} from '@react-navigation/drawer';
+import {createDrawerNavigator} from '@react-navigation/drawer';
 import {TabScreens} from '../../screens';
-import CustomDrawer from '../../components/CustomDrawer'
+import CustomDrawer from '../../components/CustomDrawer';
 import FindLocation from '../../screens/MainApp/BottomSheetScreens/SearchMap/FindLocation';
 
 const Drawer = createDrawerNavigator();
@@ -22,6 +20,5 @@ const AppStack = () => {
     </NavigationContainer>
   );
 };
-
 
 export default AppStack;

@@ -1,9 +1,6 @@
 import {StyleSheet} from 'react-native';
 import {Colors, Fonts} from '../../Theme';
-import {
-  responsiveFontSize,
-} from 'react-native-responsive-dimensions';
-
+import {responsiveFontSize} from 'react-native-responsive-dimensions';
 export const styles = StyleSheet.create({
   MainCustomDrawer: {
     height: 100,
@@ -29,7 +26,6 @@ export const styles = StyleSheet.create({
     fontFamily: Fonts.Medium,
     marginLeft: 10,
   },
-
   DrawerOpen: {
     position: 'absolute',
     height: 100,
