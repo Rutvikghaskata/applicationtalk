@@ -20,9 +20,10 @@ export const styles = StyleSheet.create({
     overflow: 'hidden',
   },
   textInputStyle: {
+    width:'100%',
     fontSize: responsiveFontSize(2),
     fontFamily: Fonts.Regular,
     marginLeft: 7,
-    color:Colors.black
+    color:Colors.black,
   },
 });

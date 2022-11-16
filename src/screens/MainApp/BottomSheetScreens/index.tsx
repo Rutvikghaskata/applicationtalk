@@ -1,9 +1,7 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import React from 'react';
+import React,{FunctionComponent} from 'react';
 import {
-  StyleSheet,
   View,
-  Text,
   TouchableOpacity,
   StatusBar,
 } from 'react-native';
@@ -11,7 +9,7 @@ import {Colors} from '../../../Theme';
 import {
   responsiveWidth,
 } from 'react-native-responsive-dimensions';
-import {Home,AppointmentScreen,SearchMap,PillScreen,ProfileScreen} from '../../../screens';
+import {Home,MyAppointment,SearchMap,PillScreen,ProfileScreen} from '../../../screens';
 import Header from '../../../components/header';
 import {
   HomeTab,
@@ -28,10 +26,10 @@ const Tab = createBottomTabNavigator();
 
 export type Props = {
   children: string;
-  onPress: any;
+  navigation: any
 };
 
-const CustomTabBarButton: React.FC<Props> = ({children, onPress}) => (
+const CustomTabBarButton: FunctionComponent<Props> = ({children,navigation}) => (
   <TouchableOpacity
     activeOpacity={1}
     style={{
@@ -39,7 +37,7 @@ const CustomTabBarButton: React.FC<Props> = ({children, onPress}) => (
       justifyContent: 'center',
       alignItems: 'center',
     }}
-    onPress={onPress}>
+    onPress={()=>navigation.navigate('searchMap')}>
     <View
       style={{
         width: 60,
@@ -54,9 +52,8 @@ const CustomTabBarButton: React.FC<Props> = ({children, onPress}) => (
 
 const Tabs = ({navigation}: {navigation: any}) => {
   return (
-    <View style={{flex:1,backgroundColor:'white'}}>
+    <View style={{flex:1,backgroundColor:'transparent'}}>
       <StatusBar
-        // hidden
         backgroundColor={Colors.primaryBlue[400]}
         barStyle="light-content"
       />
@@ -70,8 +67,9 @@ const Tabs = ({navigation}: {navigation: any}) => {
             backgroundColor: '#ffffff',
             height: 70,
             borderTopLeftRadius: 20,
-            borderTopRightRadius: 20,           
+            borderTopRightRadius: 20,      
           },
+          
           title: '',
           headerShown: false,
         }}>
@@ -98,7 +96,7 @@ const Tabs = ({navigation}: {navigation: any}) => {
         />
         <Tab.Screen
           name="appointment"
-          component={AppointmentScreen}
+          component={MyAppointment}
           options={{
             tabBarIcon: ({focused}) => (
               <View
@@ -118,7 +116,7 @@ const Tabs = ({navigation}: {navigation: any}) => {
           }}
         />
         <Tab.Screen
-          name="searchMap"
+          name="map"
           component={SearchMap}
           options={{
             tabBarIcon: ({}) => (
@@ -132,7 +130,7 @@ const Tabs = ({navigation}: {navigation: any}) => {
                 <MapSearch height="100%" />
               </View>
             ),
-            tabBarButton: props => <CustomTabBarButton {...props} />,
+            tabBarButton: props => <CustomTabBarButton {...props} navigation={navigation}/>,
           }}
         />
         <Tab.Screen

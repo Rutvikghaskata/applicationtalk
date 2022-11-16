@@ -400,7 +400,7 @@ export const GoogleMapData = [
     description: 'Cardiologist',
     date: 'Tue, 3 Dec',
     isVerified: true,
-    rate: 3,
+    rating: 3,
     imgUrl:
       'https://t4.ftcdn.net/jpg/01/36/18/77/360_F_136187711_qeBMOwkPdTg1dCN8e5TR1AmduXDz60Xn.jpg',
     type: 'doctor',
@@ -415,7 +415,7 @@ export const GoogleMapData = [
     description: 'Cardiologist',
     date: 'Sun, 7 Match',
     isVerified: true,
-    rate: 3,
+    rating: 3,
     imgUrl:
       'https://www.doctortipster.com/wp-content/uploads/2016/02/Dr-Zukerman-Profile.jpg',
     type: 'doctor',
@@ -430,7 +430,7 @@ export const GoogleMapData = [
     description: 'Cardiologist',
     date: 'Mon, 11 Feb',
     isVerified: true,
-    rate: 5,
+    rating: 5,
     imgUrl:
       'https://thumbs.dreamstime.com/b/hospital-building-modern-parking-lot-59693686.jpg',
     type: 'hospital',
@@ -445,7 +445,7 @@ export const GoogleMapData = [
     description: 'Cardiologist',
     date: 'Tue, 29 Jan',
     isVerified: false,
-    rate: 4,
+    rating: 4,
     imgUrl:
       'https://www.uab.edu/news/images/2018/Stream_Hospital_signs-3_2.png',
     type: 'hospital',
@@ -460,7 +460,7 @@ export const GoogleMapData = [
     description: 'Ct Scan',
     date: 'Sun, 7 March',
     isVerified: true,
-    rate: 3,
+    rating: 3,
     imgUrl:
       'https://media.istockphoto.com/photos/portrait-of-male-doctor-in-white-coat-and-stethoscope-standing-in-picture-id1327024466?k=20&m=1327024466&s=170667a&w=0&h=VAPdOIGbK4z9FsRZTUc2dFY61QkCTQHQNkBRv70pe3I=',
     type: 'doctor',
@@ -475,9 +475,65 @@ export const GoogleMapData = [
     description: 'Health & Wellness',
     date: 'Mon, 5 April',
     isVerified: false,
-    rate: 3,
+    rating: 3,
     imgUrl:
       'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
     type: 'doctor',
   },
 ];
+
+
+export const AppointmentData = [
+  {
+    id:'1',
+    type:'video',
+    name:'Dr. Albert Cooper',
+    imgUrl:'https://t4.ftcdn.net/jpg/01/36/18/77/360_F_136187711_qeBMOwkPdTg1dCN8e5TR1AmduXDz60Xn.jpg',
+    date: '12 June 2021 | 12:00pm',
+    reason:'For Back Pain',
+    status:2,
+    review:[
+      {
+      id:'123',
+      rate:5,
+      description:'Excellent service done by doctor',
+      reply:'Thank you so much for your kind words.'
+      }
+    ]
+  },
+  {
+    id:'2',
+    type:'audio',
+    name:'Dr. Albert Cooper',
+    imgUrl:'https://www.doctortipster.com/wp-content/uploads/2016/02/Dr-Zukerman-Profile.jpg',
+    date: '12 June 2021 | 12:00pm',
+    reason:'For Back Pain',
+    status:3,
+    review:[
+      {
+      id:'123',
+      rate:5,
+      description:'Excellent service done by doctor',
+      reply:'Thank you so much for your kind words.'
+      }
+    ]
+  },{
+    id:'3',
+    type:'clinic',
+    name:'Dr. Albert Cooper',
+    imgUrl:'https://media.istockphoto.com/photos/portrait-of-male-doctor-in-white-coat-and-stethoscope-standing-in-picture-id1327024466?k=20&m=1327024466&s=170667a&w=0&h=VAPdOIGbK4z9FsRZTUc2dFY61QkCTQHQNkBRv70pe3I=',
+    date: '12 June 2021 | 12:00pm',
+    reason:'For Back Pain',
+    status:1,
+    review:null
+  },{
+    id:'4',
+    type:'video',
+    name:'Dr. Albert Cooper',
+    imgUrl:'https://t4.ftcdn.net/jpg/01/36/18/77/360_F_136187711_qeBMOwkPdTg1dCN8e5TR1AmduXDz60Xn.jpg',
+    date: '12 June 2021 | 12:00pm',
+    reason:'For Back Pain',
+    status:2,
+    review:null
+  },
+]

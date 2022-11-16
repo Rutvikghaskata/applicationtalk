@@ -9,7 +9,7 @@ import {
 export const styles = StyleSheet.create({
   specialist: {
     width: responsiveWidth(100),
-    marginTop: responsiveHeight(5),
+    marginTop: responsiveHeight(1),
   },
   specialisthead: {
     flexDirection: 'row',

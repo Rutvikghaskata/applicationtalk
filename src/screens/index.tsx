@@ -11,10 +11,11 @@ import Forget from './Auth/ForgetPassword';
 import Reset from './Auth/ResetPassword';
 import TabScreens from './MainApp/BottomSheetScreens';
 import Home from './MainApp/BottomSheetScreens/Home';
-import AppointmentScreen from './MainApp/BottomSheetScreens/Appointment'
-import SearchMap from './MainApp/BottomSheetScreens/SearchMap';
+import MyAppointment from './MainApp/BottomSheetScreens/MyAppointment'
+import SearchMap from './MainApp/SearchMap';
 import PillScreen from './MainApp/BottomSheetScreens/Pill';
 import ProfileScreen from './MainApp/BottomSheetScreens/Profile';
+import FindLocation from './MainApp/SearchMap/FindLocation';
 
 export {
   Login,
@@ -30,8 +31,9 @@ export {
   Symptoms,
   TabScreens,
   Home,
-  AppointmentScreen,
+  MyAppointment,
   SearchMap,
   PillScreen,
-  ProfileScreen
+  ProfileScreen,
+  FindLocation,
 };

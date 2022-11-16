@@ -16,6 +16,7 @@ export const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     marginBottom: responsiveHeight(4),
+    paddingHorizontal: responsiveWidth(3.5),
   },
   appTitle: {
     fontSize: responsiveFontSize(2.5),

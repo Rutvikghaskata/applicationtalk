@@ -1,28 +1,16 @@
 import {View, Text, Image, Animated, Dimensions, Platform} from 'react-native';
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, FunctionComponent} from 'react';
 import Geolocation from '@react-native-community/geolocation';
 import MapView, {Marker} from 'react-native-maps';
-import {Hospital, Doctor, Pin, Verified} from '../../../../Theme/Icons';
-import {GoogleMapData} from '../../../../lib/utils/CommonUtils';
+import {Hospital, Doctor, Pin, Verified} from '../../../Theme/Icons';
+import {GoogleMapData} from '../../../lib/utils/CommonUtils';
 import {styles} from './styles';
-import {Colors, Fonts} from '../../../../Theme';
-import {StarRating} from '../../../../lib/utils/CommonFunction';
-interface Props {
-  latitude: number;
-  longitude: number;
-  altitude: number | null;
-  accuracy: number;
-  altitudeAccuracy: number | null;
-  heading: number | null;
-  speed: number | null;
-}
-
-interface RegionProps {
-  latitude: number | string | null;
-  longitude: number | string | null;
-  latitudeDelta: number | string | null;
-  longitudeDelta: number | string | null;
-}
+import {Colors, Fonts} from '../../../Theme';
+import {StarRating} from '../../../lib/utils/CommonFunction';
+import Header from '../../../components/header';
+import {useAppNavigation} from '../../../navigations/hook';
+import {SearchInput} from '../../../components/Common';
+import {CardProps} from './types';
 
 const {width, height} = Dimensions.get('window');
 const CARD_HEIGHT = 100;
@@ -99,32 +87,36 @@ const SearchMap = () => {
 
   const onMarkerPress = (mapEventData: {_targetInst: {return: {key: any}}}) => {
     const markerId = mapEventData._targetInst.return.key;
-
     let x = markerId * CARD_WIDTH + markerId * 20;
     if (Platform.OS === 'android') {
       x = x - SPACING_FOR_CARD_INSET;
     }
-
     _scrollView.current.scrollTo({x: x, y: 0, animated: true});
-    // Alert.alert(markerId)
   };
 
+  const navigation = useAppNavigation();
+
+  const [search, setSearch] = useState<string>('');
   return (
     <View style={{flex: 1}}>
+      <Header navigation={navigation} />
+      <View style={styles.headerBackground}>
+        <SearchInput
+          value={search}
+          placeholder="Search Doctor & Hospital"
+          onChangeText={text => setSearch(text)}
+          style={{backgroundColor: 'white', borderWidth: 0}}
+        />
+      </View>
       <MapView
         ref={_map}
-        style={{height: '100%', width: '100%'}}
-        region={initialMapState.region}
-        // customMapStyle={mapDarkStyle}
-        // onRegionChange={info => console.log('info', info)}
-      >
+        style={styles.mapView}
+        region={initialMapState.region}>
         <Marker
           coordinate={{
             latitude: latitude,
             longitude: longitude,
-          }}
-          // image={Pin}
-        >
+          }}>
           <Image source={Pin} style={{height: 60, width: 60}} />
         </Marker>
         {initialMapState.GoogleMapData.map((marker, index) => {
@@ -183,80 +175,8 @@ const SearchMap = () => {
           {useNativeDriver: true},
         )}>
         {initialMapState.GoogleMapData.map((data, index) => (
-          <View
-            style={{
-              elevation: 10,
-              backgroundColor: '#FFF',
-              borderRadius: 10,
-              marginHorizontal: 10,
-              shadowColor: '#000',
-              shadowRadius: 5,
-              shadowOpacity: 0.3,
-              shadowOffset: {x: 2, y: -2},
-              height: CARD_HEIGHT,
-              width: CARD_WIDTH,
-              padding: 15,
-              overflow: 'hidden',
-              flexDirection: 'row',
-              alignItems: 'center',
-              marginBottom: 20,
-            }}
-            key={index}>
-            <View style={{height: 70, width: 70}}>
-              <Image
-                source={{uri: data.imgUrl}}
-                style={{height: '100%', width: '100%', borderRadius: 5}}
-              />
-            </View>
-            <View
-              style={{
-                height: '100%',
-                width: CARD_WIDTH - 110,
-                justifyContent: 'space-between',
-                paddingLeft: 10,
-              }}>
-              <Text
-                style={{
-                  color: Colors.sky,
-                  fontSize: 16,
-                  fontFamily: Fonts.Medium,
-                }}>
-                {data.name}
-              </Text>
-              <Text
-                style={{
-                  color: Colors.grey[400],
-                  fontSize: 14,
-                  fontFamily: Fonts.Regular,
-                  marginTop: -5,
-                }}>
-                {data.description}
-              </Text>
-              <View
-                style={{
-                  width: '100%',
-                  flexDirection: 'row',
-                  alignItems: 'flex-end',
-                  justifyContent: 'space-between',
-                }}>
-                <View style={{flexDirection: 'row', alignItems: 'center'}}>
-                  {data.isVerified && (
-                    <Text style={{marginRight: 5}}>
-                      <Verified />
-                    </Text>
-                  )}
-                  <Text
-                    style={{
-                      color: Colors.grey[900],
-                      fontSize: 14,
-                      fontFamily: Fonts.Regular,
-                    }}>
-                    {data.date}
-                  </Text>
-                </View>
-                <StarRating rate={data.rate}/>
-              </View>
-            </View>
+          <View key={index}>
+            <Card data={data} index={index} />
           </View>
         ))}
       </Animated.ScrollView>
@@ -264,4 +184,31 @@ const SearchMap = () => {
   );
 };
 
+const Card: FunctionComponent<CardProps> = ({data, index}) => {
+  return (
+    <View style={styles.cardContainer} key={index}>
+      <View style={styles.imageWrapper}>
+        <Image
+          source={{uri: data.imgUrl}}
+          style={{height: '100%', width: '100%', borderRadius: 5}}
+        />
+      </View>
+      <View style={styles.InfoWrapper}>
+        <Text style={styles.name}>{data.name}</Text>
+        <Text style={styles.description}>{data.description}</Text>
+        <View style={styles.otherInfo}>
+          <View style={{flexDirection: 'row', alignItems: 'center'}}>
+            {data.isVerified && (
+              <Text style={{marginRight: 5}}>
+                <Verified />
+              </Text>
+            )}
+            <Text style={styles.date}>{data.date}</Text>
+          </View>
+          <StarRating rating={data.rating} />
+        </View>
+      </View>
+    </View>
+  );
+};
 export default SearchMap;

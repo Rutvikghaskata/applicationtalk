@@ -44,6 +44,7 @@ const DoctorCard = (props: {
       style={[
         styles.card,
         props.index % 2 == 0 && {marginLeft: responsiveWidth(3.5)},
+        props.index >= 2 && {marginBottom: responsiveWidth(10)},
       ]}
       activeOpacity={0.9}>
       <View style={styles.photosContainer}>
