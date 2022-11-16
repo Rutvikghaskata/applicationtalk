@@ -1,12 +1,12 @@
-import { View, Text } from 'react-native'
-import React, { FunctionComponent } from 'react'
+import {View, Text} from 'react-native';
+import React, {FunctionComponent} from 'react';
 import {styles} from './styles';
-import { AppointmentProps} from '../types';
+import {AppointmentProps} from '../types';
 import {PressableText} from '../../../../../components/Common';
 import {Calender2} from '../../../../../Theme/Icons';
 import {MaleProfile} from '../../../../../Theme/Images';
 
- const Appointment: FunctionComponent<AppointmentProps> = props => {
+const Appointment: FunctionComponent<AppointmentProps> = props => {
   return (
     <View style={styles.appointmentWrapper}>
       <View
@@ -16,7 +16,10 @@ import {MaleProfile} from '../../../../../Theme/Images';
           alignItems: 'center',
         }}>
         <Text style={styles.appTitle}>Appointment today</Text>
-        <PressableText style={styles.seeAll}>See all</PressableText>
+         {/* examples of popup */}
+        <PressableText style={styles.seeAll} onPress={props.onHandleModel}>
+          See all
+        </PressableText>
       </View>
       <View style={styles.appointmentCard}>
         <View style={styles.doctorInfo}>
@@ -42,9 +45,7 @@ import {MaleProfile} from '../../../../../Theme/Images';
         </View>
       </View>
     </View>
-  )
-}
+  );
+};
 
-export default Appointment
-
- 
+export default Appointment;

@@ -12,10 +12,12 @@ import {SearchInput, PressableSearch} from '../../../../components/Common';
 import Icon from 'react-native-vector-icons/Ionicons';
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 import {Colors} from '../../../../Theme';
-
+import ModalAlert from '../../../../components/Common/Alert';
+import {useAppNavigation} from '../../../../navigations/hook';
 const Home: FunctionComponent = () => {
   const [search, setSearch] = useState<string>();
   const [showFilter, setShowFilter] = useState<boolean>(false);
+  const [modalVisible, setModalVisible] = useState(false);
 
   Handler.addEventListener('hardwareBackPress', () => {
     if (showFilter) {
@@ -24,9 +26,25 @@ const Home: FunctionComponent = () => {
     }
     return false;
   });
+
+  const navigation = useAppNavigation();
+  const onHandleNavigate = (name: string) => {
+    navigation.navigate(name);
+  };
+
+  const onHandleModel = () => {
+    setModalVisible(!modalVisible);
+  };
   return (
     <View style={styles.homeContainer}>
       <ScrollView showsVerticalScrollIndicator={false}>
+        {/* examples of popup */}
+        <ModalAlert
+          label={"pilldelete"}
+          onPress={() => onHandleNavigate('findDoctor')}
+          visible={modalVisible}
+          onHandleModel={onHandleModel}
+        />
         <View
           style={[
             showFilter ? styles.headerBackground : styles.roundBackground,
@@ -69,7 +87,8 @@ const Home: FunctionComponent = () => {
               <Card type="clinic" />
               <Card type="home" />
             </View>
-            <Appointment />
+             {/* examples of popup */}
+            <Appointment onHandleModel={onHandleModel} />
           </>
         )}
         <Symptoms />
