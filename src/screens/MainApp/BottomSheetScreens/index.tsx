@@ -9,7 +9,7 @@ import {Colors} from '../../../Theme';
 import {
   responsiveWidth,
 } from 'react-native-responsive-dimensions';
-import {Home,AppointmentScreen,SearchMap,PillScreen,ProfileScreen} from '../../../screens';
+import {Home,MyAppointment,SearchMap,PillScreen,ProfileScreen} from '../../../screens';
 import Header from '../../../components/header';
 import {
   HomeTab,
@@ -52,7 +52,7 @@ const CustomTabBarButton: FunctionComponent<Props> = ({children,navigation}) => 
 
 const Tabs = ({navigation}: {navigation: any}) => {
   return (
-    <View style={{flex:1,backgroundColor:'white'}}>
+    <View style={{flex:1,backgroundColor:'transparent'}}>
       <StatusBar
         backgroundColor={Colors.primaryBlue[400]}
         barStyle="light-content"
@@ -67,8 +67,9 @@ const Tabs = ({navigation}: {navigation: any}) => {
             backgroundColor: '#ffffff',
             height: 70,
             borderTopLeftRadius: 20,
-            borderTopRightRadius: 20,        
+            borderTopRightRadius: 20,      
           },
+          
           title: '',
           headerShown: false,
         }}>
@@ -95,7 +96,7 @@ const Tabs = ({navigation}: {navigation: any}) => {
         />
         <Tab.Screen
           name="appointment"
-          component={AppointmentScreen}
+          component={MyAppointment}
           options={{
             tabBarIcon: ({focused}) => (
               <View

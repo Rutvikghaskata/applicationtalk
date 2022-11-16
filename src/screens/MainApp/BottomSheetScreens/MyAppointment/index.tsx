@@ -1,9 +1,9 @@
 import {View, Text, StatusBar, TouchableOpacity} from 'react-native';
 import React from 'react';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
-import {Colors, Fonts} from '../../../Theme';
-import Header from '../../../components/header';
-import {useAppNavigation} from '../../../navigations/hook';
+import {Colors, Fonts} from '../../../../Theme';
+import Header from '../../../../components/header';
+import {useAppNavigation} from '../../../../navigations/hook';
 import Icon from 'react-native-vector-icons/Entypo';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Today from './Today';

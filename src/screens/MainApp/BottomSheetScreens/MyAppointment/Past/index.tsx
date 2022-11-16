@@ -1,9 +1,9 @@
 import {View, Text, FlatList, TouchableOpacity} from 'react-native';
 import React from 'react';
 import {styles} from './styles';
-import {AppointmentData} from '../../../../lib/utils/CommonUtils';
+import {AppointmentData} from '../../../../../lib/utils/CommonUtils';
 import {Image} from 'react-native';
-import {Video, Audio,Clinic} from '../../../../Theme/Icons';
+import {Video, Audio,Clinic} from '../../../../../Theme/Icons';
 
 const Upcoming = () => {
   return (
