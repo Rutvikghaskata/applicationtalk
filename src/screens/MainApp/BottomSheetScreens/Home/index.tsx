@@ -8,11 +8,10 @@ import Specialist from './Specialist';
 import Hospitals from './Hospitals';
 import Card from './Card';
 import {Handler} from '../../../../config/lib';
-import {SearchInput, PressableSearch} from '../../../../components/Common';
+import {SearchInput, PressableSearch,AlertModel} from '../../../../components/Common';
 import Icon from 'react-native-vector-icons/Ionicons';
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 import {Colors} from '../../../../Theme';
-import ModalAlert from '../../../../components/Common/Alert';
 import {useAppNavigation} from '../../../../navigations/hook';
 const Home: FunctionComponent = () => {
   const [search, setSearch] = useState<string>();
@@ -39,7 +38,7 @@ const Home: FunctionComponent = () => {
     <View style={styles.homeContainer}>
       <ScrollView showsVerticalScrollIndicator={false}>
         {/* examples of popup */}
-        <ModalAlert
+        <AlertModel
           label={"pilldelete"}
           onPress={() => onHandleNavigate('findDoctor')}
           visible={modalVisible}

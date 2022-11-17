@@ -1,6 +1,5 @@
-import React, {useState, FunctionComponent} from 'react';
+import React, {FunctionComponent} from 'react';
 import {
-  Alert,
   Modal,
   TouchableOpacity,
   Text,
@@ -16,7 +15,6 @@ const ModalAlert: FunctionComponent<AlertProps> = ({
   onHandleModel,
   ...props
 }) => {
-  const [modalVisible, setModalVisible] = useState(false);
   return (
     <View style={styles.centeredView}>
       <Modal
@@ -48,7 +46,7 @@ const ModalAlert: FunctionComponent<AlertProps> = ({
             </Text>
             <Pressable
               style={[styles.button, styles.buttonClose]}
-              onPress={() => setModalVisible(!modalVisible)}>
+              onPress={() => onHandleModel}>
               <TouchableOpacity
                 onPress={onHandleModel}
                 activeOpacity={0.7}

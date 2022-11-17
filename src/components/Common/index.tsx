@@ -11,6 +11,8 @@ import SymptomsCard from './SymptomsCard';
 import SpecialistCard from './SpecialistCard';
 import HospitalCard from './HospitalsCard';
 import PressableSearch from './PressableSearch';
+import AppointmentCard from './AppointmentCard'
+import AlertModel from './Alert';
 
 export {
   Container,
@@ -25,5 +27,7 @@ export {
   SymptomsCard,
   SpecialistCard,
   HospitalCard,
-  PressableSearch
+  PressableSearch,
+  AppointmentCard,
+  AlertModel
 };

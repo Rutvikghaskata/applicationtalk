@@ -67,9 +67,9 @@ const Tabs = ({navigation}: {navigation: any}) => {
             backgroundColor: '#ffffff',
             height: 70,
             borderTopLeftRadius: 20,
-            borderTopRightRadius: 20,      
+            borderTopRightRadius: 20,    
+            borderTopWidth:0  
           },
-          
           title: '',
           headerShown: false,
         }}>
